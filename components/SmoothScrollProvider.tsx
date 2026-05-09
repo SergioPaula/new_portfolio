@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Lenis from '@studio-freight/lenis'
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -25,6 +27,15 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
 
     return () => lenis.destroy()
   }, [])
+
+  // Force scroll to top on route change
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const lenis = (window as any).__lenis
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+    }
+  }, [pathname])
 
   return <>{children}</>
 }

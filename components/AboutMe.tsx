@@ -52,7 +52,7 @@ export default function AboutMe() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "var(--text-small)",
+              fontSize: "var(--text-body)",
               color: "var(--gray-600)",
               lineHeight: 1.8,
               marginBottom: "2.5rem",

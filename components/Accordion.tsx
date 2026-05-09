@@ -56,7 +56,7 @@ export default function Accordion({
                 fontStretch: "condensed",
                 textTransform: "uppercase" as const,
                 letterSpacing: "-0.01em",
-                fontSize: "1.0625rem",
+                fontSize: "var(--text-h4)",
                 color: "var(--gray-900)",
               }}
             >
