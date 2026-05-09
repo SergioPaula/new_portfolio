@@ -4,8 +4,8 @@ import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // ── Customize here ───────────────────────────────────────
-const BG_COLOR = "#0a0a0a";
-const SVG_FILL = "#ffffff";
+const BG_COLOR = "var(--black)";
+const SVG_FILL = "var(--white)";
 
 // ── Component ────────────────────────────────────────────
 // Place this directly after your hero section.
@@ -49,7 +49,7 @@ export default function InvisibilidadeReveal() {
       <section
         style={{
           height: "100vh",
-          background: "#f5f5f5",
+          background: "var(--gray-100)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

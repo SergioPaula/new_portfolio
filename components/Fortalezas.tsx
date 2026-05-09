@@ -19,13 +19,13 @@ const HARD_SKILLS = [
   {
     name: "Illustrator",
     percent: 45,
-    color: "#ff5b35",
+    color: "var(--vermelho-1)",
     iconSrc: "/images/sobre/Adobe_Illustrator_CC_icon.svg",
   },
   {
     name: "Photoshop",
     percent: 80,
-    color: "#00a8d9",
+    color: "var(--azul-1)",
     iconSrc: "/images/sobre/Adobe_Photoshop_CC_2026_icon.svg",
   },
   {
@@ -138,7 +138,7 @@ function RadarChart() {
       <polygon
         points={dataPolygon}
         fill="rgba(0, 168, 217, 0.15)"
-        stroke="#00a8d9"
+        stroke="var(--azul-1)"
         strokeWidth="2"
         strokeLinejoin="round"
       />
@@ -146,7 +146,7 @@ function RadarChart() {
       {/* Data points */}
       {SOFT_SKILLS.map((s, i) => {
         const p = pt(i, (s.value / 10) * maxR);
-        return <circle key={i} cx={p.x} cy={p.y} r="4" fill="#00a8d9" />;
+        return <circle key={i} cx={p.x} cy={p.y} r="4" fill="var(--azul-1)" />;
       })}
 
       {/* Labels */}
@@ -160,9 +160,9 @@ function RadarChart() {
             dominantBaseline="middle"
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "11px",
+              fontSize: "var(--text-micro)",
               fontWeight: 500,
-              fill: "#525252",
+              fill: "var(--gray-600)",
             }}
           >
             {lines.map((line, j) => (
@@ -277,9 +277,9 @@ export default function Fortalezas() {
     fontWeight: 800,
     fontStretch: "condensed",
     textTransform: "uppercase",
-    fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+    fontSize: "var(--text-h4)",
     color: "var(--gray-900)",
-    marginBottom: "1.5rem",
+    marginBottom: "var(--space-md)",
     display: "block",
     letterSpacing: "-0.01em",
   };
@@ -345,11 +345,11 @@ export default function Fortalezas() {
         }
       `}</style>
       {/* Section header */}
-      <motion.div {...fadeUp()} style={{ marginBottom: "4rem" }}>
+      <motion.div {...fadeUp()} style={{ marginBottom: "var(--space-2xl)" }}>
         <p
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
+            fontSize: "var(--text-micro)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
@@ -362,9 +362,9 @@ export default function Fortalezas() {
         <h2
           className="font-display"
           style={{
-            fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+            fontSize: "var(--text-h3)",
             color: "var(--gray-900)",
-            marginBottom: "1rem",
+            marginBottom: "var(--space-sm)",
           }}
         >
           FORTALEZAS
@@ -372,7 +372,7 @@ export default function Fortalezas() {
         <p
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(1rem, 1.35vw, 1.0625rem)",
+            fontSize: "var(--text-body)",
             color: "var(--gray-600)",
             lineHeight: 1.7,
             maxWidth: 560,
@@ -401,7 +401,7 @@ export default function Fortalezas() {
               flexWrap: "wrap",
               gap: "0.4rem",
               justifyContent: "center",
-              marginTop: "1rem",
+              marginTop: "var(--space-sm)",
               overflow: "visible",
             }}
           >
@@ -409,13 +409,13 @@ export default function Fortalezas() {
               <motion.span
                 key={s.label}
                 className="skill-pill"
-                whileHover={{ backgroundColor: "#ff6571", color: "#ffffff" }}
+                whileHover={{ backgroundColor: "var(--rosa-4)", color: "var(--white)" }}
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.75rem",
+                  fontSize: "var(--text-micro)",
                   fontWeight: 500,
                   color: "var(--gray-600)",
-                  background: "#f5f5f5",
+                  background: "var(--gray-100)",
                   borderRadius: 9999,
                   padding: "4px 12px",
                   whiteSpace: "nowrap",
@@ -437,7 +437,7 @@ export default function Fortalezas() {
         <motion.div
           {...fadeUp(0)}
           className="lg:order-2 order-1"
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "var(--space-md)" }}
         >
           <RpgCard />
         </motion.div>
@@ -447,7 +447,7 @@ export default function Fortalezas() {
           <span style={colLabel}>HARD SKILLS</span>
           <div>
             {HARD_SKILLS.map((skill, i) => (
-              <div key={skill.name} style={{ marginBottom: "1.25rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+              <div key={skill.name} style={{ marginBottom: "1.25rem", display: "flex", gap: "var(--space-sm)", alignItems: "center" }}>
                 {/* ICON */}
                 <div
                   style={{
@@ -458,7 +458,7 @@ export default function Fortalezas() {
                     alignItems: "center",
                     justifyContent: "center",
                     overflow: "hidden",
-                    background: skill.isBlackBg ? "#000000" : (skill.iconSrc ? "transparent" : "#005bb5"),
+                    background: skill.isBlackBg ? "var(--black)" : (skill.iconSrc ? "transparent" : "#005bb5"),
                     borderRadius: 8,
                   }}
                 >
@@ -473,17 +473,17 @@ export default function Fortalezas() {
                       style={{ display: "block", objectFit: "contain" }}
                     />
                   ) : (
-                    <Globe size={24} color="#ffffff" aria-hidden="true" />
+                    <Globe size={24} color="var(--white)" aria-hidden="true" />
                   )}
                 </div>
 
                 {/* TEXT & BAR */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--space-xs)" }}>
                     <span
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontSize: "0.9375rem",
+                        fontSize: "var(--text-small)",
                         fontWeight: 700,
                         color: "var(--gray-800)",
                       }}
@@ -493,7 +493,7 @@ export default function Fortalezas() {
                     <span
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontSize: "0.875rem",
+                        fontSize: "var(--text-small)",
                         fontWeight: 600,
                         color: "var(--gray-400)",
                         fontVariantNumeric: "tabular-nums",

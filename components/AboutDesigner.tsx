@@ -15,7 +15,7 @@ export default function AboutDesigner() {
     <section
       id="sobre-trabalho"
       style={{
-        background: "#fff",
+        background: "var(--white)",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
@@ -50,7 +50,7 @@ export default function AboutDesigner() {
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
               fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              color: "#171717",
+              color: "var(--gray-900)",
             }}
           >
             MEU TRABALHO É
@@ -66,7 +66,7 @@ export default function AboutDesigner() {
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
               fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-              color: "#a3a3a3",
+              color: "var(--gray-400)",
               marginTop: "1.25rem",
             }}
           >
@@ -87,7 +87,7 @@ export default function AboutDesigner() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "1.75rem",
+            gap: "var(--space-md)",
             order: 2,
           }}
           className="lg:invisible" // Invisible on desktop to leave space for the sticky card. Visible on mobile.
@@ -110,9 +110,9 @@ export default function AboutDesigner() {
               justifyContent: "center",
               fontFamily: "'Open Sans', sans-serif",
               fontWeight: 800,
-              color: "#fff",
+              color: "var(--white)",
               fontSize: "1.25rem",
-              marginTop: "1rem",
+              marginTop: "var(--space-sm)",
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
             }}
           >
@@ -140,7 +140,7 @@ export default function AboutDesigner() {
               lineHeight: 0.9,
               letterSpacing: "-0.03em",
               fontSize: "clamp(3rem, 6vw, 6rem)",
-              color: "#171717",
+              color: "var(--gray-900)",
             }}
           >
             COMO
@@ -150,15 +150,15 @@ export default function AboutDesigner() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.9375rem",
+              fontSize: "var(--text-small)",
               color: "#999",
               lineHeight: 1.7,
-              marginTop: "1.5rem",
+              marginTop: "var(--space-md)",
             }}
           >
             construo narrativas que tenham...
             <br />
-            <strong style={{ color: "#171717", fontWeight: 600 }}>
+            <strong style={{ color: "var(--gray-900)", fontWeight: 600 }}>
               COMEÇO, MEIO E FIM
             </strong>
           </p>

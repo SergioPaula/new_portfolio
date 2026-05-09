@@ -22,7 +22,7 @@ const PROJECTS = [
     title: "CONVENÇÃO DE VENDAS MONDELĒZ",
     description:
       "Apresentação visual de alto impacto para a convenção de vendas da Mondelēz International.",
-    accent: "#00a8d9",
+    accent: "var(--azul-1)",
     // TODO: reconectar para página do projeto quando pronta
     href: "/em-construcao.html",
   },
@@ -32,7 +32,7 @@ const PROJECTS = [
     title: "DIVINA FATIA",
     description:
       "Criação completa da identidade visual para confeitaria artesanal.",
-    accent: "#9979da",
+    accent: "var(--roxo-1)",
     // TODO: reconectar para página do projeto quando pronta
     href: "/em-construcao.html",
   },
@@ -156,9 +156,9 @@ function Card({
               borderRadius: 9999,
               background: project.accent,
               fontFamily: "var(--font-body)",
-              fontSize: "0.75rem",
+              fontSize: "var(--text-micro)",
               fontWeight: 600,
-              color: "#fff",
+              color: "var(--white)",
               textTransform: "uppercase",
               letterSpacing: "0.07em",
             }}
@@ -173,8 +173,8 @@ function Card({
               fontWeight: 800,
               fontStretch: "condensed",
               textTransform: "uppercase",
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              color: "#fff",
+              fontSize: "var(--text-h3)",
+              color: "var(--white)",
               lineHeight: 1,
               letterSpacing: "-0.02em",
               margin: 0,
@@ -187,7 +187,7 @@ function Card({
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "clamp(0.75rem, 1.2vw, 0.875rem)",
+              fontSize: "var(--text-micro)",
               color: "rgba(255,255,255,0.85)",
               lineHeight: 1.6,
               margin: 0,
@@ -219,7 +219,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projetos" style={{ background: "#fff" }}>
+    <section id="projetos" style={{ background: "var(--white)" }}>
       {/* ── Section header ── */}
       <div
         className="page-container"
@@ -242,8 +242,8 @@ export default function Projects() {
               textTransform: "uppercase",
               lineHeight: 1,
               letterSpacing: "-0.02em",
-              fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
-              color: "#171717",
+              fontSize: "var(--text-h3)",
+              color: "var(--gray-900)",
               marginBottom: "0.75rem",
             }}
           >
@@ -252,8 +252,8 @@ export default function Projects() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.9375rem",
-              color: "#666",
+              fontSize: "var(--text-small)",
+              color: "var(--gray-600)",
               lineHeight: 1.7,
               maxWidth: 600,
             }}
@@ -305,7 +305,7 @@ export default function Projects() {
         className="page-container"
         style={{
           textAlign: "center",
-          paddingTop: "2rem",
+          paddingTop: "var(--space-lg)",
           paddingBottom: "clamp(4rem, 8vw, 8rem)",
         }}
       >
@@ -317,14 +317,14 @@ export default function Projects() {
             alignItems: "center",
             padding: "0.875rem 2.25rem",
             borderRadius: 9999,
-            background: "#171717",
+            background: "var(--gray-900)",
             fontFamily: "'Open Sans', sans-serif",
             fontWeight: 800,
             fontStretch: "condensed",
             textTransform: "uppercase",
             letterSpacing: "-0.01em",
-            fontSize: "0.9rem",
-            color: "#fff",
+            fontSize: "var(--text-small)",
+            color: "var(--white)",
             textDecoration: "none",
             transition: "background 0.2s",
           }}
@@ -333,7 +333,7 @@ export default function Projects() {
               "var(--azul-1)";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.background = "#171717";
+            (e.currentTarget as HTMLAnchorElement).style.background = "var(--gray-900)";
           }}
         >
           Ver Todos os Projetos

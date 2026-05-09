@@ -108,13 +108,13 @@ export default function FlipCard() {
               { num: "200+", label: "Projetos Realizados" },
               { num: "50+", label: "Clientes Atendidos" },
             ].map(({ num, label }) => (
-              <div key={label} style={{ textAlign: "center", color: "#fff" }}>
+              <div key={label} style={{ textAlign: "center", color: "var(--white)" }}>
                 <p
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
                     fontWeight: 800,
                     fontStretch: "condensed",
-                    fontSize: "3.25rem",
+                    fontSize: "var(--text-h2)",
                     lineHeight: 1,
                     letterSpacing: "-0.02em",
                   }}
@@ -124,7 +124,7 @@ export default function FlipCard() {
                 <p
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.7rem",
+                    fontSize: "var(--text-micro)",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     opacity: 0.85,

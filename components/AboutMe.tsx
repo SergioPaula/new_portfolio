@@ -15,7 +15,7 @@ export default function AboutMe() {
     <section
       id="sobre"
       style={{
-        background: "#fff",
+        background: "var(--white)",
         paddingTop: "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "clamp(4rem, 8vw, 8rem)",
       }}
@@ -41,9 +41,9 @@ export default function AboutMe() {
               textTransform: "uppercase",
               lineHeight: 1,
               letterSpacing: "-0.02em",
-              fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
-              color: "#171717",
-              marginBottom: "1.5rem",
+              fontSize: "var(--text-h3)",
+              color: "var(--gray-900)",
+              marginBottom: "var(--space-md)",
             }}
           >
             SOBRE MIM
@@ -52,8 +52,8 @@ export default function AboutMe() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.9375rem",
-              color: "#525252",
+              fontSize: "var(--text-small)",
+              color: "var(--gray-600)",
               lineHeight: 1.8,
               marginBottom: "2.5rem",
               maxWidth: 520,
@@ -92,8 +92,8 @@ export default function AboutMe() {
                 <p
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.75rem",
-                    color: "#a3a3a3",
+                    fontSize: "var(--text-micro)",
+                    color: "var(--gray-400)",
                     textTransform: "uppercase",
                     letterSpacing: "0.05em",
                     marginTop: "0.25rem",
@@ -111,16 +111,16 @@ export default function AboutMe() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "0.5rem",
-              marginBottom: "1.75rem",
+              gap: "var(--space-xs)",
+              marginBottom: "var(--space-md)",
             }}
           >
             <a
               href="#contato"
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "0.9rem",
-                color: "#525252",
+                fontSize: "var(--text-small)",
+                color: "var(--gray-600)",
                 textDecoration: "none",
               }}
             >
@@ -130,8 +130,8 @@ export default function AboutMe() {
               href="tel:+5511949632858"
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "0.9rem",
-                color: "#525252",
+                fontSize: "var(--text-small)",
+                color: "var(--gray-600)",
                 textDecoration: "none",
               }}
             >
@@ -146,7 +146,7 @@ export default function AboutMe() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "0.5rem",
+              gap: "var(--space-xs)",
               padding: "0.75rem 1.75rem",
               borderRadius: 9999,
               border: "2px solid var(--azul-1)",
@@ -155,7 +155,7 @@ export default function AboutMe() {
               fontStretch: "condensed",
               textTransform: "uppercase",
               letterSpacing: "-0.01em",
-              fontSize: "0.9rem",
+              fontSize: "var(--text-small)",
               color: "var(--azul-1)",
               textDecoration: "none",
               transition: "background 0.2s, color 0.2s",
@@ -163,7 +163,7 @@ export default function AboutMe() {
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLAnchorElement;
               el.style.background = "var(--azul-1)";
-              el.style.color = "#fff";
+              el.style.color = "var(--white)";
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLAnchorElement;
@@ -188,7 +188,7 @@ export default function AboutMe() {
             style={{
               borderRadius: 24,
               overflow: "hidden",
-              background: "#e6c9bb",
+              background: "var(--rosa-3)",
               boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
               position: "relative",
               aspectRatio: "4/5",

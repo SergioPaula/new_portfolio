@@ -27,7 +27,7 @@ export default function Services() {
     <section
       id="servicos"
       style={{
-        background: "#fff",
+        background: "var(--white)",
         paddingTop: "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "clamp(4rem, 8vw, 8rem)",
       }}
@@ -51,9 +51,9 @@ export default function Services() {
               textTransform: "uppercase",
               lineHeight: 1,
               letterSpacing: "-0.02em",
-              fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
-              color: "#171717",
-              marginBottom: "1rem",
+              fontSize: "var(--text-h3)",
+              color: "var(--gray-900)",
+              marginBottom: "var(--space-sm)",
             }}
           >
             O QUE EU
@@ -63,8 +63,8 @@ export default function Services() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.9375rem",
-              color: "#666",
+              fontSize: "var(--text-small)",
+              color: "var(--gray-600)",
               lineHeight: 1.7,
               marginBottom: "2.5rem",
               maxWidth: 480,

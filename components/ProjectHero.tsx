@@ -48,7 +48,7 @@ export default function ProjectHero({ project }: { project: ProjectData }) {
           transition={{ duration: 0.5, delay: 0.15 }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
+            fontSize: "var(--text-micro)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
@@ -71,8 +71,8 @@ export default function ProjectHero({ project }: { project: ProjectData }) {
             textTransform: "uppercase",
             lineHeight: 1,
             letterSpacing: "-0.02em",
-            fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
-            color: "#171717",
+            fontSize: "var(--text-h2)",
+            color: "var(--gray-900)",
             textWrap: "balance" as CSSProperties["textWrap"],
             marginBottom: "1.125rem",
           }}
@@ -87,8 +87,8 @@ export default function ProjectHero({ project }: { project: ProjectData }) {
           transition={{ duration: 0.7, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
-            color: "#666",
+            fontSize: "var(--text-body)",
+            color: "var(--gray-600)",
             lineHeight: 1.6,
             maxWidth: 640,
             marginBottom: "clamp(1.75rem, 3.5vw, 2.5rem)",
@@ -119,11 +119,11 @@ export default function ProjectHero({ project }: { project: ProjectData }) {
               <p
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.7rem",
+                  fontSize: "var(--text-micro)",
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
-                  color: "#a3a3a3",
+                  color: "var(--gray-400)",
                   marginBottom: "0.3rem",
                 }}
               >
@@ -132,9 +132,9 @@ export default function ProjectHero({ project }: { project: ProjectData }) {
               <p
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.9375rem",
+                  fontSize: "var(--text-small)",
                   fontWeight: 500,
-                  color: "#171717",
+                  color: "var(--gray-900)",
                   lineHeight: 1.3,
                 }}
               >

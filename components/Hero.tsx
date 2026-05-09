@@ -74,12 +74,12 @@ export default function Hero() {
             target={href.startsWith("#") ? "_self" : "_blank"}
             rel="noopener noreferrer"
             className="transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#00a8d9] rounded"
-            style={{ color: "#000000" }}
+            style={{ color: "var(--black)" }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "#d8df20")
+              (e.currentTarget.style.color = "var(--limao-1)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "#000000")
+              (e.currentTarget.style.color = "var(--black)")
             }
           >
             <Icon size={28} weight="regular" aria-hidden={true} />
@@ -119,7 +119,7 @@ export default function Hero() {
           variants={itemVariant}
           className="font-display text-white mb-6"
           style={{
-            fontSize: "clamp(3rem, 10vw, 6rem)",
+            fontSize: "var(--text-h1)",
             lineHeight: "var(--leading-tight)",
             letterSpacing: "var(--tracking-tight)",
             fontFamily: "var(--font-display)",
@@ -141,7 +141,7 @@ export default function Hero() {
           className="text-white font-semibold uppercase max-w-2xl"
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
+            fontSize: "var(--text-small)",
             letterSpacing: "var(--tracking-wide)",
             fontWeight: 600,
           }}

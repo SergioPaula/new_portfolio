@@ -16,7 +16,7 @@ export default function MoreProjects({ excludeSlugs = [] }: MoreProjectsProps) {
     <section
       aria-label="Mais projetos"
       style={{
-        background: "#f5f5f5",
+        background: "var(--gray-100)",
         paddingTop: "clamp(4rem, 8vw, 7.5rem)",
         paddingBottom: "clamp(4rem, 8vw, 7.5rem)",
       }}
@@ -25,12 +25,12 @@ export default function MoreProjects({ excludeSlugs = [] }: MoreProjectsProps) {
         <h2
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
+            fontSize: "var(--text-micro)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
-            color: "#a3a3a3",
-            marginBottom: "2rem",
+            color: "var(--gray-400)",
+            marginBottom: "var(--space-lg)",
           }}
         >
           Mais Projetos
@@ -70,7 +70,7 @@ export default function MoreProjects({ excludeSlugs = [] }: MoreProjectsProps) {
                 <p
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.7rem",
+                    fontSize: "var(--text-micro)",
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
@@ -87,7 +87,7 @@ export default function MoreProjects({ excludeSlugs = [] }: MoreProjectsProps) {
                     fontStretch: "condensed",
                     textTransform: "uppercase",
                     fontSize: "1.0625rem",
-                    color: "#171717",
+                    color: "var(--gray-900)",
                     letterSpacing: "-0.01em",
                     lineHeight: 1.15,
                     textWrap: "balance" as CSSProperties["textWrap"],

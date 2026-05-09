@@ -51,9 +51,9 @@ export default function Footer() {
     borderRadius: 12,
     border: "1.5px solid #e5e5e5",
     fontFamily: "var(--font-body)",
-    fontSize: "0.9rem",
-    color: "#171717",
-    background: "#fafafa",
+    fontSize: "var(--text-small)",
+    color: "var(--gray-900)",
+    background: "var(--gray-100)",
     outline: "none",
     transition: "border-color 0.2s",
   };
@@ -62,16 +62,16 @@ export default function Footer() {
     <footer
       id="contato"
       style={{
-        background: "#fff",
+        background: "var(--white)",
         paddingTop: "clamp(4rem, 8vw, 8rem)",
-        paddingBottom: "2rem",
+        paddingBottom: "var(--space-lg)",
       }}
     >
       <div className="page-container">
         {/* ── Main content ── */}
         <div
           className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start"
-          style={{ marginBottom: "4rem" }}
+          style={{ marginBottom: "var(--space-2xl)" }}
         >
           {/* Left: photo + info */}
           <motion.div
@@ -85,7 +85,7 @@ export default function Footer() {
               style={{
                 position: "relative",
                 display: "inline-block",
-                marginBottom: "2rem",
+                marginBottom: "var(--space-lg)",
               }}
             >
               <div
@@ -111,14 +111,14 @@ export default function Footer() {
                   position: "absolute",
                   bottom: -12,
                   right: -20,
-                  background: "#fff",
+                  background: "var(--white)",
                   border: "2px solid #171717",
                   borderRadius: "20px 20px 20px 4px",
                   padding: "6px 16px",
                   fontFamily: "var(--font-body)",
                   fontWeight: 700,
-                  fontSize: "1rem",
-                  color: "#171717",
+                  fontSize: "var(--text-body)",
+                  color: "var(--gray-900)",
                   boxShadow: "2px 2px 0 #171717",
                   whiteSpace: "nowrap",
                 }}
@@ -135,9 +135,9 @@ export default function Footer() {
                 textTransform: "uppercase",
                 lineHeight: 1,
                 letterSpacing: "-0.03em",
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                color: "#171717",
-                marginBottom: "2rem",
+                fontSize: "var(--text-h2)",
+                color: "var(--gray-900)",
+                marginBottom: "var(--space-lg)",
               }}
             >
               VAMOS TRABALHAR
@@ -149,16 +149,16 @@ export default function Footer() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.5rem",
-                marginBottom: "1.5rem",
+                gap: "var(--space-xs)",
+                marginBottom: "var(--space-md)",
               }}
             >
               <a
                 href="#contato"
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.9rem",
-                  color: "#525252",
+                  fontSize: "var(--text-small)",
+                  color: "var(--gray-600)",
                   textDecoration: "none",
                 }}
               >
@@ -168,8 +168,8 @@ export default function Footer() {
                 href="tel:+5511949632858"
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.9rem",
-                  color: "#525252",
+                  fontSize: "var(--text-small)",
+                  color: "var(--gray-600)",
                   textDecoration: "none",
                 }}
               >
@@ -189,13 +189,13 @@ export default function Footer() {
           >
             <form
               onSubmit={handleSubmit}
-              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+              style={{ display: "flex", flexDirection: "column", gap: "var(--space-sm)" }}
             >
               <div
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
+                  gap: "var(--space-sm)",
                 }}
                 className="grid-cols-1 sm:grid-cols-2"
               >
@@ -205,9 +205,9 @@ export default function Footer() {
                     style={{
                       display: "block",
                       fontFamily: "var(--font-body)",
-                      fontSize: "0.75rem",
+                      fontSize: "var(--text-micro)",
                       fontWeight: 600,
-                      color: "#525252",
+                      color: "var(--gray-600)",
                       textTransform: "uppercase",
                       letterSpacing: "0.06em",
                       marginBottom: "0.4rem",
@@ -227,7 +227,7 @@ export default function Footer() {
                     onFocus={(e) =>
                       (e.target.style.borderColor = "var(--azul-1)")
                     }
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                    onBlur={(e) => (e.target.style.borderColor = "var(--gray-200)")}
                   />
                 </div>
                 <div>
@@ -236,9 +236,9 @@ export default function Footer() {
                     style={{
                       display: "block",
                       fontFamily: "var(--font-body)",
-                      fontSize: "0.75rem",
+                      fontSize: "var(--text-micro)",
                       fontWeight: 600,
-                      color: "#525252",
+                      color: "var(--gray-600)",
                       textTransform: "uppercase",
                       letterSpacing: "0.06em",
                       marginBottom: "0.4rem",
@@ -258,7 +258,7 @@ export default function Footer() {
                     onFocus={(e) =>
                       (e.target.style.borderColor = "var(--azul-1)")
                     }
-                    onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                    onBlur={(e) => (e.target.style.borderColor = "var(--gray-200)")}
                   />
                 </div>
               </div>
@@ -269,9 +269,9 @@ export default function Footer() {
                   style={{
                     display: "block",
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.75rem",
+                    fontSize: "var(--text-micro)",
                     fontWeight: 600,
-                    color: "#525252",
+                    color: "var(--gray-600)",
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
                     marginBottom: "0.4rem",
@@ -289,7 +289,7 @@ export default function Footer() {
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--azul-1)")
                   }
-                  onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                  onBlur={(e) => (e.target.style.borderColor = "var(--gray-200)")}
                 >
                   <option value="">Selecione um serviço</option>
                   <option value="ui-ux">UI/UX Design</option>
@@ -306,9 +306,9 @@ export default function Footer() {
                   style={{
                     display: "block",
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.75rem",
+                    fontSize: "var(--text-micro)",
                     fontWeight: 600,
-                    color: "#525252",
+                    color: "var(--gray-600)",
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
                     marginBottom: "0.4rem",
@@ -328,7 +328,7 @@ export default function Footer() {
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--azul-1)")
                   }
-                  onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}
+                  onBlur={(e) => (e.target.style.borderColor = "var(--gray-200)")}
                 />
               </div>
 
@@ -338,15 +338,15 @@ export default function Footer() {
                   alignSelf: "flex-start",
                   padding: "0.9rem 2.5rem",
                   borderRadius: 9999,
-                  background: "#171717",
+                  background: "var(--gray-900)",
                   border: "none",
                   fontFamily: "'Open Sans', sans-serif",
                   fontWeight: 800,
                   fontStretch: "condensed",
                   textTransform: "uppercase",
                   letterSpacing: "-0.01em",
-                  fontSize: "0.9rem",
-                  color: "#fff",
+                  fontSize: "var(--text-small)",
+                  color: "var(--white)",
                   cursor: "pointer",
                   transition: "background 0.2s, transform 0.2s",
                 }}
@@ -356,7 +356,7 @@ export default function Footer() {
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.background =
-                    "#171717";
+                    "var(--gray-900)";
                 }}
               >
                 Enviar Mensagem
@@ -369,19 +369,19 @@ export default function Footer() {
         <div
           style={{
             borderTop: "1px solid #e5e5e5",
-            paddingTop: "1.5rem",
+            paddingTop: "var(--space-md)",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             flexWrap: "wrap",
-            gap: "0.5rem",
+            gap: "var(--space-xs)",
           }}
         >
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.8rem",
-              color: "#a3a3a3",
+              fontSize: "var(--text-micro)",
+              color: "var(--gray-400)",
             }}
           >
             © 2026 Sérgio Paula. Todos os direitos reservados.
@@ -389,8 +389,8 @@ export default function Footer() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.8rem",
-              color: "#a3a3a3",
+              fontSize: "var(--text-micro)",
+              color: "var(--gray-400)",
             }}
           >
             Designer Gráfico & Digital — Bragança Paulista, SP

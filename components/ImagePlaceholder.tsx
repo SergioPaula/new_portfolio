@@ -35,11 +35,11 @@ export default function ImagePlaceholder({
         <span
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
+            fontSize: "var(--text-micro)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
-            color: "#a3a3a3",
+            color: "var(--gray-400)",
           }}
         >
           {label}

@@ -29,7 +29,7 @@ export default function Accordion({
               width: "100%",
               display: "flex",
               alignItems: "center",
-              gap: "1rem",
+              gap: "var(--space-sm)",
               padding: "1.25rem 0",
               background: "none",
               border: "none",
@@ -40,8 +40,8 @@ export default function Accordion({
             <span
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "0.8rem",
-                color: "#a3a3a3",
+                fontSize: "var(--text-micro)",
+                color: "var(--gray-400)",
                 minWidth: "2rem",
                 fontWeight: 500,
               }}
@@ -57,7 +57,7 @@ export default function Accordion({
                 textTransform: "uppercase" as const,
                 letterSpacing: "-0.01em",
                 fontSize: "1.0625rem",
-                color: "#171717",
+                color: "var(--gray-900)",
               }}
             >
               {item.title}
@@ -67,7 +67,7 @@ export default function Accordion({
               transition={{ duration: 0.3 }}
               style={{ display: "flex", flexShrink: 0 }}
             >
-              <ChevronDown size={20} color="#171717" />
+              <ChevronDown size={20} color="var(--gray-900)" />
             </motion.span>
           </button>
 
@@ -83,10 +83,10 @@ export default function Accordion({
                 <div
                   style={{
                     paddingBottom: "1.25rem",
-                    paddingLeft: "3rem",
+                    paddingLeft: "var(--space-xl)",
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.9375rem",
-                    color: "#525252",
+                    fontSize: "var(--text-small)",
+                    color: "var(--gray-600)",
                     lineHeight: 1.7,
                   }}
                 >

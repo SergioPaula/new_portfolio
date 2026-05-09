@@ -35,12 +35,12 @@ export default function ProjectSection({ label, paragraphs, image }: ProjectSect
       <h2
         style={{
           fontFamily: "var(--font-body)",
-          fontSize: "0.75rem",
+          fontSize: "var(--text-micro)",
           fontWeight: 600,
           textTransform: "uppercase",
           letterSpacing: "0.12em",
-          color: "#a3a3a3",
-          marginBottom: "1.75rem",
+          color: "var(--gray-400)",
+          marginBottom: "var(--space-md)",
         }}
       >
         {label}
@@ -60,7 +60,7 @@ export default function ProjectSection({ label, paragraphs, image }: ProjectSect
             key={i}
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "clamp(1rem, 1.35vw, 1.0625rem)",
+              fontSize: "var(--text-body)",
               color: "#404040",
               lineHeight: 1.8,
             }}

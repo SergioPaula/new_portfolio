@@ -47,7 +47,7 @@ export default function StickyCard({ images, alts, activeIndex }: StickyCardProp
         borderRadius: 24,
         overflow: "hidden",
         position: "relative",
-        background: "#f5f5f5",
+        background: "var(--gray-100)",
       }}
     >
       <AnimatePresence mode="wait">

@@ -133,7 +133,7 @@ export default function StorySequence() {
                     backfaceVisibility: "hidden",
                     WebkitBackfaceVisibility: "hidden",
                     transform: "rotateY(0deg)",
-                    background: "#e6c9bb",
+                    background: "var(--rosa-3)",
                   }}
                 >
                   <Image
@@ -155,7 +155,7 @@ export default function StorySequence() {
                     backfaceVisibility: "hidden",
                     WebkitBackfaceVisibility: "hidden",
                     transform: "rotateY(-180deg)",
-                    background: "#fff",
+                    background: "var(--white)",
                   }}
                 >
                   <Image
@@ -178,14 +178,14 @@ export default function StorySequence() {
                 width: 60,
                 height: 60,
                 borderRadius: "50%",
-                background: "#9979da",
+                background: "var(--roxo-1)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontFamily: "var(--font-body)",
                 fontWeight: 600,
-                color: "#fff",
-                fontSize: "14px",
+                color: "var(--white)",
+                fontSize: "var(--text-small)",
                 opacity: olaOpacity,
                 willChange: "opacity",
                 zIndex: 10,

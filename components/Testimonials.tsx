@@ -10,7 +10,7 @@ function Stars() {
   return (
     <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
       {[0, 1, 2, 3, 4].map((i) => (
-        <Star key={i} weight="fill" size={18} color="#ff6571" />
+        <Star key={i} weight="fill" size={18} color="var(--rosa-4)" />
       ))}
     </div>
   );
@@ -40,8 +40,8 @@ function Avatar({
           justifyContent: "center",
           fontFamily: "'Open Sans', sans-serif",
           fontWeight: 800,
-          fontSize: "0.875rem",
-          color: "#fff",
+          fontSize: "var(--text-small)",
+          color: "var(--white)",
           flexShrink: 0,
         }}
       >
@@ -108,7 +108,7 @@ function TestimonialCard({
         style={{
           fontFamily: "var(--font-body)",
           fontWeight: 400,
-          fontSize: "1rem",
+          fontSize: "var(--text-body)",
           color: "var(--gray-600)",
           lineHeight: 1.7,
           marginBottom: 24,
@@ -124,7 +124,7 @@ function TestimonialCard({
             style={{
               fontFamily: "var(--font-body)",
               fontWeight: 700,
-              fontSize: "1rem",
+              fontSize: "var(--text-body)",
               color: "var(--gray-900)",
             }}
           >
@@ -134,7 +134,7 @@ function TestimonialCard({
             style={{
               fontFamily: "var(--font-body)",
               fontWeight: 400,
-              fontSize: "0.875rem",
+              fontSize: "var(--text-small)",
               color: "var(--gray-400)",
             }}
           >
@@ -158,14 +158,14 @@ function StatsCard({ className }: { className: string }) {
         background: "var(--azul-1)",
         borderRadius: 16,
         padding: 32,
-        color: "#fff",
+        color: "var(--white)",
       }}
     >
       <p
         style={{
           fontFamily: "var(--font-body)",
           fontWeight: 400,
-          fontSize: "0.875rem",
+          fontSize: "var(--text-small)",
           textTransform: "uppercase",
           letterSpacing: "0.1em",
           opacity: 0.85,
@@ -179,7 +179,7 @@ function StatsCard({ className }: { className: string }) {
           fontFamily: "'Open Sans', sans-serif",
           fontWeight: 800,
           fontStretch: "condensed",
-          fontSize: "5rem",
+          fontSize: "var(--text-h1)",
           lineHeight: 1,
           letterSpacing: "-0.02em",
         }}
@@ -190,7 +190,7 @@ function StatsCard({ className }: { className: string }) {
         style={{
           fontFamily: "var(--font-body)",
           fontWeight: 600,
-          fontSize: "1.125rem",
+          fontSize: "var(--text-body)",
         }}
       >
         marcas atendidas
@@ -206,7 +206,7 @@ function StatsCard({ className }: { className: string }) {
         style={{
           fontFamily: "var(--font-body)",
           fontWeight: 400,
-          fontSize: "0.875rem",
+          fontSize: "var(--text-small)",
           textTransform: "uppercase",
           letterSpacing: "0.1em",
           opacity: 0.85,
@@ -219,7 +219,7 @@ function StatsCard({ className }: { className: string }) {
         style={{
           fontFamily: "var(--font-body)",
           fontWeight: 500,
-          fontSize: "0.875rem",
+          fontSize: "var(--text-small)",
           lineHeight: 1.6,
           opacity: 0.9,
         }}
@@ -241,7 +241,7 @@ export default function Testimonials() {
     <section
       id="depoimentos"
       style={{
-        background: "#fff",
+        background: "var(--white)",
         paddingTop: "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "clamp(4rem, 8vw, 8rem)",
       }}
@@ -259,7 +259,7 @@ export default function Testimonials() {
             textTransform: "uppercase",
             lineHeight: 1,
             letterSpacing: "-0.02em",
-            fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
+            fontSize: "var(--text-h3)",
             color: "var(--gray-900)",
             marginBottom: "clamp(2.5rem, 5vw, 4rem)",
           }}
@@ -272,10 +272,10 @@ export default function Testimonials() {
         <p
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "1rem",
-            color: "#666",
+            fontSize: "var(--text-body)",
+            color: "var(--gray-600)",
             marginTop: "-1rem",
-            marginBottom: "3rem",
+            marginBottom: "var(--space-xl)",
           }}
         >
           Veja o que meus clientes compartilharam sobre a experiência de
@@ -316,7 +316,7 @@ export default function Testimonials() {
             title="Gerente de Qualidade"
             avatarSrc="/images/depoimentos/ricardo.jpg"
             initials="RF"
-            fallbackBg="#9979da"
+            fallbackBg="var(--roxo-1)"
             delay={0.2}
           />
 
@@ -328,7 +328,7 @@ export default function Testimonials() {
             title="Analista de Telecom"
             avatarSrc="/images/depoimentos/julia.jpg"
             initials="JF"
-            fallbackBg="#01ad63"
+            fallbackBg="var(--verde-1)"
             delay={0.1}
           />
 

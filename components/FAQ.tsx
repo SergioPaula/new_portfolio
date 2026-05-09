@@ -41,7 +41,7 @@ export default function FAQ() {
     <section
       id="faq"
       style={{
-        background: "#f5f5f5",
+        background: "var(--gray-100)",
         paddingTop: "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "clamp(4rem, 8vw, 8rem)",
       }}
@@ -63,9 +63,9 @@ export default function FAQ() {
                 textTransform: "uppercase",
                 lineHeight: 1,
                 letterSpacing: "-0.02em",
-                fontSize: "clamp(2.25rem, 4vw, 3.5rem)",
-                color: "#171717",
-                marginBottom: "1.5rem",
+                fontSize: "var(--text-h3)",
+                color: "var(--gray-900)",
+                marginBottom: "var(--space-md)",
               }}
             >
               PERGUNTAS
@@ -75,8 +75,8 @@ export default function FAQ() {
             <p
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "0.9375rem",
-                color: "#666",
+                fontSize: "var(--text-small)",
+                color: "var(--gray-600)",
                 lineHeight: 1.7,
               }}
             >

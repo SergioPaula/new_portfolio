@@ -35,11 +35,11 @@ export default function ProjectGallery({
         <h2
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
+            fontSize: "var(--text-micro)",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
-            color: "#a3a3a3",
+            color: "var(--gray-400)",
             marginBottom: description ? "1.25rem" : "2rem",
           }}
         >
@@ -52,7 +52,7 @@ export default function ProjectGallery({
         <p
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(1rem, 1.35vw, 1.0625rem)",
+            fontSize: "var(--text-body)",
             color: "#404040",
             lineHeight: 1.8,
             maxWidth: 720,
@@ -65,7 +65,7 @@ export default function ProjectGallery({
 
       {/* Image layout */}
       {layout === "single" ? (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
           {images.map((img, i) => (
             <motion.div
               key={i}
