@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Em Construção — Sérgio Paula</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75,800;1,75,800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --azul-1: #00a8d9;
+      --roxo-1: #9979da;
+      --black: #000000;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-400: #a3a3a3;
+      --gray-800: #262626;
+      --gray-900: #171717;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--white);
+      color: var(--gray-900);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-brand {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--gray-800);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-back:hover { color: var(--azul-1); }
+
+    .nav-back:focus-visible,
+    .nav-brand:focus-visible {
+      outline: 2px solid var(--azul-1);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 64px clamp(1.5rem, 5vw, 4rem) 0;
+      min-height: 100vh;
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      gap: clamp(3rem, 8vw, 8rem);
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: clamp(2rem, 6vh, 5rem) 0;
+    }
+
+    /* ── LEFT ── */
+    .content-left {
+      flex: 1;
+      min-width: 0;
+      max-width: 540px;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 9999px;
+      border: 1px solid var(--gray-200);
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: clamp(2.75rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1.75rem;
+    }
+
+    .body-main {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--gray-800);
+      margin-bottom: 0.875rem;
+    }
+
+    .body-accent {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--azul-1);
+      margin-bottom: 2.25rem;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 40px;
+      border-radius: 9999px;
+      background: var(--azul-1);
+      color: var(--white);
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 168, 217, 0.35);
+    }
+
+    .btn-cta:focus-visible {
+      outline: 2px solid var(--azul-1);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-cta {
+        transition: none;
+      }
+      .btn-cta:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 168, 217, 0.3);
+      }
+    }
+
+    /* ── RIGHT — slide stack ── */
+    .content-right {
+      flex: 0 0 auto;
+      width: clamp(220px, 36vw, 420px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slides-stack {
+      position: relative;
+      width: 100%;
+      height: clamp(140px, 24vw, 270px);
+    }
+
+    .slide-rect {
+      position: absolute;
+      width: 82%;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      left: 50%;
+      top: 50%;
+    }
+
+    .slide-1 {
+      background: #c7ecf7;
+      transform: translate(-50%, -50%) rotate(-7deg) translate(-14px, 20px);
+      z-index: 1;
+      animation: float1 5s ease-in-out infinite;
+    }
+
+    .slide-2 {
+      background: var(--roxo-1);
+      opacity: 0.72;
+      transform: translate(-50%, -50%) rotate(-2deg) translate(6px, 8px);
+      z-index: 2;
+      animation: float2 5s ease-in-out infinite 0.45s;
+    }
+
+    .slide-3 {
+      background: var(--azul-1);
+      transform: translate(-50%, -50%) rotate(4deg) translate(0px, 0px);
+      z-index: 3;
+      animation: float3 5s ease-in-out infinite 0.9s;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translate(-50%, -50%) rotate(-7deg) translate(-14px, 20px); }
+      50%       { transform: translate(-50%, -50%) rotate(-7deg) translate(-14px, 10px); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translate(-50%, -50%) rotate(-2deg) translate(6px, 8px); }
+      50%       { transform: translate(-50%, -50%) rotate(-2deg) translate(6px, -2px); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translate(-50%, -50%) rotate(4deg) translate(0px, 0px); }
+      50%       { transform: translate(-50%, -50%) rotate(4deg) translate(0px, -10px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slide-1, .slide-2, .slide-3 {
+        animation: none;
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+        align-items: flex-start;
+      }
+
+      .content-right {
+        width: 100%;
+        max-width: 360px;
+        align-self: center;
+      }
+
+      .content-left {
+        max-width: none;
+      }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.875rem;
+      color: var(--gray-400);
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Navegação principal">
+    <a href="/" class="nav-brand" aria-label="Sérgio Paula — início">Sérgio Paula</a>
+    <a href="/" class="nav-back" aria-label="Voltar ao início do site">
+      <span aria-hidden="true">←</span> Voltar ao início
+    </a>
+  </nav>
+
+  <main>
+    <div class="content-wrapper">
+
+      <div class="content-left">
+        <span class="tag-pill" aria-label="Status: em construção">Em Construção</span>
+
+        <h1>
+          Essa parte<br>
+          ainda está<br>
+          ganhando<br>
+          forma.
+        </h1>
+
+        <p class="body-main">
+          Cada projeto aqui dentro tem uma história.
+          Estou organizando tudo com cuidado para
+          apresentar da forma que merece.
+        </p>
+
+        <p class="body-accent">
+          Mas se você quiser dar uma espiada<br>
+          no que já foi feito&hellip;
+        </p>
+
+        <a href="PORTFOLIO/index.html" class="btn-cta" aria-label="Ver apresentações corporativas anteriores">
+          Ver Apresentações <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="content-right" aria-hidden="true" role="presentation">
+        <div class="slides-stack">
+          <div class="slide-rect slide-1"></div>
+          <div class="slide-rect slide-2"></div>
+          <div class="slide-rect slide-3"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>sergiopaula.com.br</p>
+  </footer>
+
+</body>
+</html>
