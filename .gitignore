@@ -23,8 +23,15 @@ yarn-error.log*
 # vercel
 .vercel
 
-# large files / backups
+# large files / backups / nested repos
 PORTFOLIO.zip
+/PORTFOLIO/
+/public/PORTFOLIO/
+
+# word / office docs
+*.doc
+*.docx
+Textos_Revisao_Sobre_Mim_arquivos/
 
 # word temp files
 ~$*

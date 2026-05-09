@@ -20,6 +20,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
 
     requestAnimationFrame(raf)
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(window as any).__lenis = lenis
 
     return () => lenis.destroy()

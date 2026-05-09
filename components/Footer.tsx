@@ -40,7 +40,7 @@ export default function Footer() {
       } else {
         alert("Ops, ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.");
       }
-    } catch (error) {
+    } catch {
       alert("Erro ao enviar a mensagem. Verifique sua conexão.");
     }
   };

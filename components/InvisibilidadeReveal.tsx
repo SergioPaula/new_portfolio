@@ -28,6 +28,7 @@ export default function InvisibilidadeReveal() {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const lenis = (window as any).__lenis;
     if (!lenis) return;
     const onScroll = () => {};

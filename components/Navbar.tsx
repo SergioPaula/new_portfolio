@@ -22,9 +22,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]           = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const lenis = (window as any).__lenis;
     if (lenis) {
-      const onLenisScroll = (e: any) => {
+      const onLenisScroll = (e: { direction: number }) => {
         const curr = window.scrollY;
         if (curr < 50) {
           setScrollingDown(false);
