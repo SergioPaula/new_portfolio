@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+        gap: 16px;
+    }
+
+    .contato {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 32px;
+        flex-grow: 1;
+
+    }
+
+    .contato>a {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-decoration: none;
+       
+    }
+
+    div>h1:nth-child(1) {
+        margin-bottom: 0vh;
+    }
+
+    figure {
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .return>a>p {
+        color: #969696;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.062);
+        max-width: 50%;
+        margin: auto;
+        border-radius: 3px;
+    }
+
+  
+
+}

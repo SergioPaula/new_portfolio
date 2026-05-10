@@ -28,13 +28,20 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     return () => lenis.destroy()
   }, [])
 
-  // Force scroll to top on route change
+  // Scroll to top on route change, or to hash anchor if present
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const lenis = (window as any).__lenis
-    if (lenis) {
-      lenis.scrollTo(0, { immediate: true })
+    if (!lenis) return
+    const hash = window.location.hash
+    if (hash) {
+      const target = document.querySelector(hash)
+      if (target) {
+        setTimeout(() => lenis.scrollTo(target as HTMLElement), 120)
+        return
+      }
     }
+    lenis.scrollTo(0, { immediate: true })
   }, [pathname])
 
   return <>{children}</>

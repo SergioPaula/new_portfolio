@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentações Corporativas — Sérgio Paula</title>
+  <meta name="description" content="Galeria de apresentações corporativas de Sérgio Paula — designer gráfico e digital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75,800;1,75,800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul-1: #00a8d9;
+      --roxo-1: #9979da;
+      --black: #000000;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-400: #a3a3a3;
+      --gray-800: #262626;
+      --gray-900: #171717;
+    }
+
+    html { font-size: 16px; color-scheme: light; }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--white);
+      color: var(--gray-900);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 64px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--azul-1); }
+
+    nav a:focus-visible {
+      outline: 2px solid var(--azul-1);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.75rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 112px;
+      padding-bottom: 40px;
+      padding-left: clamp(1.5rem, 5vw, 4rem);
+      padding-right: clamp(1.5rem, 5vw, 4rem);
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: block;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.875rem;
+    }
+
+    .hero h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--gray-400);
+      line-height: 1.5;
+      max-width: 520px;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    /* ── GRID ── */
+    .grid-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 3rem clamp(1.5rem, 5vw, 4rem) 6rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      
+    }
+
+    .card:focus-visible {
+      outline: 2px solid var(--azul-1);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { }
+      .card:hover { transform: none; }
+    }
+
+    .card-image-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-image-wrap img { transform: scale(1.04); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-image-wrap img { transition: none; }
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,168,217,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .card:hover .card-overlay { background: rgba(0,168,217,0.55); }
+
+    .card-overlay-icon {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .card:hover .card-overlay-icon { opacity: 1; transform: scale(1); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-overlay, .card-overlay-icon { transition: none; }
+    }
+
+    .card-info {
+      padding: 14px 18px 16px;
+    }
+
+    .card-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .card-name {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: 1.0625rem;
+      letter-spacing: -0.01em;
+      color: var(--gray-900);
+      line-height: 1.15;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 9999;
+      overscroll-behavior: contain;
+    }
+
+    .modal-overlay.is-open {
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.22s ease;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal-overlay.is-open { animation: none; }
+    }
+
+    .modal-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px clamp(1rem, 4vw, 2.5rem);
+      flex-shrink: 0;
+    }
+
+    .modal-title {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-stretch: condensed;
+      text-transform: uppercase;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      letter-spacing: -0.01em;
+      color: var(--white);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      margin-right: 1rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: color 0.2s, background 0.2s;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .modal-close:hover { color: var(--azul-1); background: rgba(255,255,255,0.07); }
+    .modal-close:focus-visible { outline: 2px solid var(--azul-1); outline-offset: 2px; }
+
+    .modal-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 0;
+      padding: 0 clamp(3rem, 8vw, 5rem);
+    }
+
+    .modal-img-wrap {
+      width: 100%;
+      max-width: 1100px;
+      max-height: 82vh;
+      aspect-ratio: 16 / 9;
+    }
+
+    .modal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .modal-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: var(--white);
+      font-size: 2.25rem;
+      line-height: 1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .modal-arrow:hover { background: rgba(0,168,217,0.25); color: var(--azul-1); }
+    .modal-arrow:focus-visible { outline: 2px solid var(--azul-1); outline-offset: 2px; }
+    .modal-arrow:disabled { opacity: 0.2; pointer-events: none; }
+
+    .modal-arrow-prev { left: clamp(0.5rem, 2vw, 1.25rem); }
+    .modal-arrow-next { right: clamp(0.5rem, 2vw, 1.25rem); }
+
+    .modal-footer {
+      flex-shrink: 0;
+      padding: 12px clamp(1rem, 4vw, 2.5rem) 20px;
+    }
+
+    .modal-counter {
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 10px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .modal-progress-track {
+      height: 2px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 9999px;
+      overflow: hidden;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .modal-progress-fill {
+      height: 100%;
+      background: var(--azul-1);
+      border-radius: 9999px;
+      transition: width 0.22s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal-progress-fill { transition: none; }
+    }
+
+    /* Mobile: setas abaixo da imagem */
+    @media (max-width: 600px) {
+      .modal-stage { flex-direction: column; padding: 0 1rem; gap: 0.75rem; }
+      .modal-img-wrap { max-height: 58vh; }
+      .modal-arrow-prev, .modal-arrow-next { display: none; }
+      .modal-arrows-mobile { display: flex; gap: 1rem; }
+      .modal-arrow { position: static; transform: none; }
+    }
+
+    @media (min-width: 601px) {
+      .modal-arrows-mobile { display: none; }
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      color: var(--gray-400);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 24px clamp(1.5rem, 5vw, 4rem);
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.75rem;
+    }
+    @media (max-width: 600px) {
+      .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav aria-label="Navegação principal">
+    <a href="/" class="nav-brand" aria-label="Sérgio Paula — página inicial">Sérgio&nbsp;Paula</a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Início</a></li>
+      <li><a href="/sobre">Sobre</a></li>
+      <li><a href="/#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-tag">Apresentações Corporativas</span>
+    <h1>Projetos</h1>
+    <p class="hero-subtitle">Narrativas visuais para marcas que têm algo a dizer.</p>
+    <hr class="hero-divider" aria-hidden="true">
+  </header>
+
+  <!-- GRID -->
+  <main>
+    <div class="grid-container">
+      <div class="projects-grid" id="projects-grid" role="list" aria-label="Galeria de projetos"></div>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Visualizador de slides" aria-hidden="true">
+    <div class="modal-bar">
+      <h2 class="modal-title" id="modal-title">Projeto</h2>
+      <button class="modal-close" id="modal-close" aria-label="Fechar">&#x2715;</button>
+    </div>
+
+    <div class="modal-stage">
+      <button class="modal-arrow modal-arrow-prev" id="modal-prev" aria-label="Slide anterior">&#8249;</button>
+
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="" loading="eager">
+      </div>
+
+      <button class="modal-arrow modal-arrow-next" id="modal-next" aria-label="Próximo slide">&#8250;</button>
+
+      <div class="modal-arrows-mobile" role="group" aria-label="Navegação mobile">
+        <button class="modal-arrow" id="modal-prev-m" aria-label="Slide anterior">&#8249;</button>
+        <button class="modal-arrow" id="modal-next-m" aria-label="Próximo slide">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <p class="modal-counter" id="modal-counter" aria-live="polite" aria-atomic="true">1 / 1</p>
+      <div class="modal-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="modal-progressbar">
+        <div class="modal-progress-fill" id="modal-progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 Sérgio Paula. Todos os direitos reservados.</p>
+    <p>Designer Gráfico &amp; Digital — Bragança Paulista, SP</p>
+  </footer>
+
+  <script>
+  'use strict';
+
+  const projects = [
+    {
+      slug: "achederma", name: "Achederma",
+      cover: "assets/capas/achederma.avif",
+      slides: ["assets/img/slides/Slide1.avif","assets/img/slides/Slide2.avif","assets/img/slides/Slide3.avif"]
+    },
+    {
+      slug: "aptar", name: "Aptar",
+      cover: "assets/capas/aptar.avif",
+      slides: ["assets/img/slides/Slide97.avif","assets/img/slides/Slide98.avif","assets/img/slides/Slide99.avif","assets/img/slides/Slide100.avif","assets/img/slides/Slide101.avif","assets/img/slides/Slide102.avif","assets/img/slides/Slide103.avif"]
+    },
+    {
+      slug: "bnp", name: "BNP Paribas",
+      cover: "assets/capas/bnp.avif",
+      slides: ["assets/img/slides/Slide118.avif","assets/img/slides/Slide119.avif","assets/img/slides/Slide120.avif","assets/img/slides/Slide121.avif","assets/img/slides/Slide122.avif","assets/img/slides/Slide123.avif","assets/img/slides/Slide124.avif"]
+    },
+    {
+      slug: "bvcontabil", name: "BV Contábil",
+      cover: "assets/capas/bvcontabil.avif",
+      slides: ["assets/img/slides/Slide13.avif","assets/img/slides/Slide14.avif","assets/img/slides/Slide15.avif"]
+    },
+    {
+      slug: "cbsocial", name: "Club Social",
+      cover: "assets/capas/cbsocial.avif",
+      slides: ["assets/img/slides/Slide44.avif","assets/img/slides/Slide45.avif","assets/img/slides/Slide46.avif","assets/img/slides/Slide47.avif"]
+    },
+    {
+      slug: "cpfl", name: "CPFL",
+      cover: "assets/capas/cpfl.avif",
+      slides: ["assets/img/slides/Slide112.avif","assets/img/slides/Slide113.avif","assets/img/slides/Slide114.avif","assets/img/slides/Slide115.avif","assets/img/slides/Slide116.avif"]
+    },
+    {
+      slug: "danone", name: "Danone",
+      cover: "assets/capas/danone.avif",
+      slides: ["assets/img/slides/Slide195.avif","assets/img/slides/Slide196.avif","assets/img/slides/Slide197.avif","assets/img/slides/Slide198.avif","assets/img/slides/Slide199.avif","assets/img/slides/Slide200.avif","assets/img/slides/Slide201.avif","assets/img/slides/Slide202.avif"]
+    },
+    {
+      slug: "delvale", name: "Delvale",
+      cover: "assets/capas/delvale.avif",
+      slides: ["assets/img/slides/Slide190.avif","assets/img/slides/Slide191.avif","assets/img/slides/Slide192.avif","assets/img/slides/Slide193.avif"]
+    },
+    {
+      slug: "devassa", name: "Devassa",
+      cover: "assets/capas/devassa.avif",
+      slides: ["assets/img/slides/Slide137.avif","assets/img/slides/Slide138.avif","assets/img/slides/Slide139.avif","assets/img/slides/Slide140.avif","assets/img/slides/Slide141.avif","assets/img/slides/Slide142.avif","assets/img/slides/Slide143.avif"]
+    },
+    {
+      slug: "fanta", name: "Fanta",
+      cover: "assets/capas/fanta.avif",
+      slides: ["assets/img/slides/Slide5.avif","assets/img/slides/Slide6.avif","assets/img/slides/Slide7.avif","assets/img/slides/Slide8.avif"]
+    },
+    {
+      slug: "fys", name: "FYS",
+      cover: "assets/capas/fys.avif",
+      slides: ["assets/img/slides/Slide145.avif","assets/img/slides/Slide146.avif","assets/img/slides/Slide147.avif","assets/img/slides/Slide148.avif","assets/img/slides/Slide149.avif"]
+    },
+    {
+      slug: "gbmen", name: "GB Men",
+      cover: "assets/capas/gbmen.avif",
+      slides: ["assets/img/slides/Slide49.avif","assets/img/slides/Slide50.avif","assets/img/slides/Slide51.avif","assets/img/slides/Slide52.avif","assets/img/slides/Slide53.avif"]
+    },
+    {
+      slug: "gerdau", name: "Gerdau",
+      cover: "assets/capas/gerdau.avif",
+      slides: ["assets/img/slides/Slide173.avif","assets/img/slides/Slide174.avif","assets/img/slides/Slide175.avif","assets/img/slides/Slide176.avif","assets/img/slides/Slide177.avif","assets/img/slides/Slide178.avif"]
+    },
+    {
+      slug: "heineken", name: "Heineken",
+      cover: "assets/capas/heineken.avif",
+      slides: ["assets/img/slides/Slide151.avif","assets/img/slides/Slide152.avif","assets/img/slides/Slide153.avif","assets/img/slides/Slide154.avif"]
+    },
+    {
+      slug: "lg", name: "LG",
+      cover: "assets/capas/lg.avif",
+      slides: ["assets/img/slides/Slide38.avif","assets/img/slides/Slide39.avif","assets/img/slides/Slide40.avif","assets/img/slides/Slide41.avif","assets/img/slides/Slide42.avif"]
+    },
+    {
+      slug: "maglu", name: "Magalu",
+      cover: "assets/capas/maglu.avif",
+      slides: ["assets/img/slides/Slide86.avif","assets/img/slides/Slide87.avif","assets/img/slides/Slide88.avif","assets/img/slides/Slide89.avif"]
+    },
+    {
+      slug: "mem", name: "MEM",
+      cover: "assets/capas/mem.avif",
+      slides: ["assets/img/slides/Slide56.avif","assets/img/slides/Slide57.avif","assets/img/slides/Slide105.avif","assets/img/slides/Slide106.avif","assets/img/slides/Slide107.avif","assets/img/slides/Slide58.avif","assets/img/slides/Slide59.avif","assets/img/slides/Slide60.avif","assets/img/slides/Slide109.avif","assets/img/slides/Slide110.avif"]
+    },
+    {
+      slug: "mercedes", name: "Mercedes-Benz",
+      cover: "assets/capas/mercedes.avif",
+      slides: ["assets/img/slides/Slide62.avif","assets/img/slides/Slide63.avif","assets/img/slides/Slide64.avif","assets/img/slides/Slide65.avif","assets/img/slides/Slide66.avif","assets/img/slides/Slide67.avif","assets/img/slides/Slide68.avif","assets/img/slides/Slide69.avif"]
+    },
+    {
+      slug: "mudee", name: "Mudee",
+      cover: "assets/capas/mudee.avif",
+      slides: ["assets/img/slides/Slide156.avif","assets/img/slides/Slide157.avif","assets/img/slides/Slide158.avif","assets/img/slides/Slide159.avif"]
+    },
+    {
+      slug: "nutro", name: "Nutro",
+      cover: "assets/capas/nutro.avif",
+      slides: ["assets/img/slides/Slide91.avif","assets/img/slides/Slide92.avif","assets/img/slides/Slide93.avif","assets/img/slides/Slide94.avif","assets/img/slides/Slide95.avif"]
+    },
+    {
+      slug: "pernod", name: "Pernod Ricard",
+      cover: "assets/capas/pernod.avif",
+      slides: ["assets/img/slides/Slide165.avif","assets/img/slides/Slide166.avif","assets/img/slides/Slide167.avif","assets/img/slides/Slide168.avif","assets/img/slides/Slide169.avif","assets/img/slides/Slide170.avif","assets/img/slides/Slide171.avif"]
+    },
+    {
+      slug: "pronova", name: "Pronova",
+      cover: "assets/capas/pronova.avif",
+      slides: ["assets/img/slides/Slide131.avif","assets/img/slides/Slide132.avif","assets/img/slides/Slide133.avif","assets/img/slides/Slide134.avif","assets/img/slides/Slide135.avif"]
+    },
+    {
+      slug: "roche", name: "Roche",
+      cover: "assets/capas/roche.avif",
+      slides: ["assets/img/slides/Slide180.avif","assets/img/slides/Slide181.avif","assets/img/slides/Slide182.avif","assets/img/slides/Slide183.avif"]
+    },
+    {
+      slug: "sandoz", name: "Sandoz",
+      cover: "assets/capas/sandoz.avif",
+      slides: ["assets/img/slides/Slide71.avif","assets/img/slides/Slide72.avif","assets/img/slides/Slide73.avif","assets/img/slides/Slide74.avif","assets/img/slides/Slide75.avif","assets/img/slides/Slide76.avif","assets/img/slides/Slide77.avif","assets/img/slides/Slide78.avif","assets/img/slides/Slide79.avif"]
+    },
+    {
+      slug: "sculptra", name: "Sculptra",
+      cover: "assets/capas/sculptra.avif",
+      slides: ["assets/capas/sculptra.avif"]
+    },
+    {
+      slug: "sol", name: "Sol",
+      cover: "assets/capas/sol.avif",
+      slides: ["assets/img/slides/Slide161.avif","assets/img/slides/Slide162.avif","assets/img/slides/Slide163.avif"]
+    },
+    {
+      slug: "ultra", name: "Ultra",
+      cover: "assets/capas/ultra.avif",
+      slides: ["assets/img/slides/Slide126.avif","assets/img/slides/Slide127.avif","assets/img/slides/Slide128.avif","assets/img/slides/Slide129.avif"]
+    }
+  ];
+
+  // ── RENDER CARDS ──────────────────────────────────────────────────────
+  const grid = document.getElementById('projects-grid');
+
+  projects.forEach(function(project, idx) {
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', 'Abrir projeto ' + project.name);
+    card.dataset.idx = idx;
+
+    card.innerHTML =
+      '<div class="card-image-wrap">' +
+        '<img src="' + project.cover + '" alt="Capa do projeto ' + project.name + '" width="640" height="360"' + (idx < 6 ? '' : ' loading="lazy"') + '>' +
+        '<div class="card-overlay" aria-hidden="true">' +
+          '<div class="card-overlay-icon">' +
+            '<svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">' +
+              '<rect x="2" y="2" width="40" height="40" rx="6" stroke="white" stroke-width="2"/>' +
+              '<path d="M16 28L28 16M28 16H19M28 16V25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-info">' +
+        '<p class="card-category">APRESENTAÇÃO CORPORATIVA</p>' +
+        '<p class="card-name">' + project.name + '</p>' +
+      '</div>';
+
+    card.addEventListener('click', function() { openModal(idx); });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(idx); }
+    });
+
+    grid.appendChild(card);
+  });
+
+  // ── MODAL ─────────────────────────────────────────────────────────────
+  var activeProject = null;
+  var activeSlide   = 0;
+  var lastFocused   = null;
+  var touchStartX   = 0;
+
+  var modal        = document.getElementById('modal');
+  var modalTitle   = document.getElementById('modal-title');
+  var modalImg     = document.getElementById('modal-img');
+  var modalCounter = document.getElementById('modal-counter');
+  var modalFill    = document.getElementById('modal-progress-fill');
+  var modalPBar    = document.getElementById('modal-progressbar');
+  var modalClose   = document.getElementById('modal-close');
+  var modalPrev    = document.getElementById('modal-prev');
+  var modalNext    = document.getElementById('modal-next');
+  var modalPrevM   = document.getElementById('modal-prev-m');
+  var modalNextM   = document.getElementById('modal-next-m');
+
+  function openModal(idx) {
+    activeProject = projects[idx];
+    activeSlide   = 0;
+    lastFocused   = document.activeElement;
+    modalTitle.textContent = activeProject.name;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    renderSlide();
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    activeProject = null;
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function renderSlide() {
+    if (!activeProject) return;
+    var total = activeProject.slides.length;
+    var src   = activeProject.slides[activeSlide];
+
+    modalImg.src = src;
+    modalImg.alt = activeProject.name + ' — slide ' + (activeSlide + 1) + ' de ' + total;
+    modalCounter.textContent = (activeSlide + 1) + ' / ' + total;
+
+    var pct = ((activeSlide + 1) / total) * 100;
+    modalFill.style.width = pct + '%';
+    modalPBar.setAttribute('aria-valuenow', Math.round(pct));
+
+    modalPrev.disabled  = activeSlide === 0;
+    modalNext.disabled  = activeSlide === total - 1;
+    modalPrevM.disabled = activeSlide === 0;
+    modalNextM.disabled = activeSlide === total - 1;
+
+    if (activeSlide + 1 < total) {
+      var pre = new Image();
+      pre.src = activeProject.slides[activeSlide + 1];
+    }
+  }
+
+  function goNext() { if (activeProject && activeSlide < activeProject.slides.length - 1) { activeSlide++; renderSlide(); } }
+  function goPrev() { if (activeProject && activeSlide > 0) { activeSlide--; renderSlide(); } }
+
+  modalClose.addEventListener('click', closeModal);
+  modalPrev.addEventListener('click',  goPrev);
+  modalNext.addEventListener('click',  goNext);
+  modalPrevM.addEventListener('click', goPrev);
+  modalNextM.addEventListener('click', goNext);
+
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!activeProject) return;
+    if (e.key === 'Escape')     { closeModal(); return; }
+    if (e.key === 'ArrowRight') { goNext();     return; }
+    if (e.key === 'ArrowLeft')  { goPrev();     return; }
+    if (e.key === 'Tab') {
+      var focusable = modal.querySelectorAll('button:not(:disabled)');
+      var first = focusable[0];
+      var last  = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  modal.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  modal.addEventListener('touchend',   function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { if (dx < 0) goNext(); else goPrev(); }
+  }, { passive: true });
+  </script>
+</body>
+</html>
