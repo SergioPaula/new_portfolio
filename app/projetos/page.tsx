@@ -261,7 +261,7 @@ export default function ProjetosGalleryPage() {
         </div>
       </main>
 
-      <Footer />
+      <Footer minimal />
 
       {/* MODAL */}
       <div className={`modal-overlay ${activeProject ? 'is-open' : ''}`} onClick={(e) => e.target === e.currentTarget && closeModal()}>

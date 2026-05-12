@@ -58,7 +58,7 @@ export default function EmConstrucaoPage() {
         </div>
       </main>
       
-      <Footer />
+      <Footer minimal />
     </div>
   );
 }

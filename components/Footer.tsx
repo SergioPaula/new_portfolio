@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BLUR_AVATAR } from "@/lib/placeholders";
 
-export default function Footer() {
+export default function Footer({ minimal = false }: { minimal?: boolean }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -64,13 +64,13 @@ export default function Footer() {
       id="contato"
       style={{
         background: "var(--white)",
-        paddingTop: "clamp(4rem, 8vw, 8rem)",
+        paddingTop: minimal ? "var(--space-md)" : "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "var(--space-lg)",
       }}
     >
       <div className="page-container">
         {/* ── Main content ── */}
-        <div
+        {!minimal && <div
           className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start"
           style={{ marginBottom: "var(--space-2xl)" }}
         >
@@ -366,7 +366,7 @@ export default function Footer() {
               </button>
             </form>
           </motion.div>
-        </div>
+        </div>}
 
         {/* ── Bottom bar ── */}
         <div

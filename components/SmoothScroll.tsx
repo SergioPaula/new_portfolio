@@ -1,35 +1,36 @@
 'use client'
-
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import Lenis from '@studio-freight/lenis'
-import { frame, cancelFrame } from 'framer-motion'
+import Lenis from 'lenis'
 
-export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 1,
       touchMultiplier: 1.5,
     })
-
-    const update = ({ timestamp }: { timestamp: number }) => {
-      lenis.raf(timestamp)
-    }
-    frame.update(update, true)
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(window as any).__lenis = lenis
 
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    const rafId = requestAnimationFrame(raf)
+
     return () => {
-      cancelFrame(update)
+      cancelAnimationFrame(rafId)
       lenis.destroy()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).__lenis = null
     }
   }, [])
 
-  // Scroll to top on route change, or to hash anchor if present
+  const pathname = usePathname()
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const lenis = (window as any).__lenis

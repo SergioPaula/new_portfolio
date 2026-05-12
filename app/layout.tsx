@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Sérgio Paula — Designer Gráfico & Digital",
@@ -27,9 +27,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.simpleicons.org" />
       </head>
       <body suppressHydrationWarning>
-        <SmoothScrollProvider>
+        <SmoothScroll>
           {children}
-        </SmoothScrollProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

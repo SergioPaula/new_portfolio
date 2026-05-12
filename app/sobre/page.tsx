@@ -599,7 +599,9 @@ export default function SobrePage() {
           {/* ═══════════════════════════════════════════════════════
               SECTION: Fortalezas
           ═══════════════════════════════════════════════════════ */}
-          <Fortalezas />
+          <div style={{ paddingTop: sectionGap }}>
+            <Fortalezas />
+          </div>
 
           {/* ═══════════════════════════════════════════════════════
               SECTION 4 — Design com Estratégia e Criatividade
