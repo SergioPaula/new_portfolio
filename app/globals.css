@@ -1,10 +1,12 @@
-/* Self-hosted variable fonts — eliminates external request that caused 27s LCP */
+/* Self-hosted fonts — eliminates external request that caused 27s LCP */
+
+/* Open Sans — variable font (normal width, all weights) */
 @font-face {
   font-family: 'Open Sans';
   src: url('/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
   font-weight: 300 800;
   font-style: normal;
-  font-stretch: 75% 100%;
+  font-stretch: normal;
   font-display: swap;
 }
 @font-face {
@@ -12,7 +14,57 @@
   src: url('/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
   font-weight: 300 800;
   font-style: italic;
-  font-stretch: 75% 100%;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+/* Open Sans Condensed — static files, explicit rules so all browsers apply font-stretch:condensed correctly */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: condensed;
   font-display: swap;
 }
 @font-face {
