@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    browsersListForSwc: true,
-  },
   trailingSlash: true,
   images: {
     remotePatterns: [],
