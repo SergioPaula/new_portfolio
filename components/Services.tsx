@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Accordion from "./Accordion";
+import { BLUR_MANGA } from "@/lib/placeholders";
 
 const SERVICES = [
   {
@@ -105,6 +106,8 @@ export default function Services() {
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
+              placeholder="blur"
+              blurDataURL={BLUR_MANGA}
             />
           </div>
         </motion.div>

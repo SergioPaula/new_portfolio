@@ -4,10 +4,17 @@ import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  BLUR_DEVASSA,
+  BLUR_CBSOCIAL,
+  BLUR_DIVINAFATIA,
+  BLUR_VIVO,
+} from "@/lib/placeholders";
 
 const PROJECTS = [
   {
     image: "/images/projetos/devassa.png",
+    blur: BLUR_DEVASSA,
     category: "Apresentação Estratégica",
     title: "CONVENÇÃO DE VENDAS DEVASSA",
     description:
@@ -18,6 +25,7 @@ const PROJECTS = [
   },
   {
     image: "/images/projetos/cbsocial.png",
+    blur: BLUR_CBSOCIAL,
     category: "Apresentação Estratégica",
     title: "CONVENÇÃO DE VENDAS MONDELĒZ",
     description:
@@ -28,6 +36,7 @@ const PROJECTS = [
   },
   {
     image: "/images/projetos/f5c50c86bd26665a8a9eec6d5244c6d7.jpg",
+    blur: BLUR_DIVINAFATIA,
     category: "Identidade de Marca",
     title: "DIVINA FATIA",
     description:
@@ -38,6 +47,7 @@ const PROJECTS = [
   },
   {
     image: "/images/projetos/s20.png",
+    blur: BLUR_VIVO,
     category: "Apresentação Corporativa",
     title: "VIVO — VP ENGENHARIA 2025",
     description:
@@ -57,7 +67,7 @@ function Card({
   index,
   scrollYProgress,
 }: {
-  project: (typeof PROJECTS)[0];
+  project: (typeof PROJECTS)[number];
   index: number;
   scrollYProgress: MotionValue<number>;
 }) {
@@ -97,7 +107,9 @@ function Card({
         alt={project.title}
         fill
         className="object-cover"
-        sizes="(max-width: 768px) 92vw, min(1440px, 100vw)"
+        sizes="(max-width: 480px) 96vw, (max-width: 768px) 92vw, min(1440px, 100vw)"
+        placeholder="blur"
+        blurDataURL={project.blur}
         priority={index === 0}
       />
 

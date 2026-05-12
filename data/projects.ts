@@ -1,9 +1,13 @@
+import { BLUR_ORANGE, BLUR_BLUE, BLUR_PURPLE, BLUR_VIOLET } from "@/lib/placeholders";
+
 export type ImageAspect = "video" | "square" | "portrait" | "wide";
 
 export interface ProjectImageData {
   src: string;
   alt: string;
   aspect?: ImageAspect;
+  /** Pre-computed data URI para o efeito blur-up (placeholder="blur"). */
+  blurDataURL?: string;
 }
 
 export interface ProjectMeta {
@@ -52,6 +56,7 @@ export const PROJECTS: ProjectData[] = [
       src: "/images/projects/devassa/cover.jpg",
       alt: "Slide de abertura da convenção de vendas Devassa",
       aspect: "wide",
+      blurDataURL: BLUR_ORANGE,
     },
     meta: {
       year: "2023",
@@ -100,6 +105,7 @@ export const PROJECTS: ProjectData[] = [
       src: "/images/projects/club-social/cover.jpg",
       alt: "Slide de abertura da convenção Club Social",
       aspect: "wide",
+      blurDataURL: BLUR_BLUE,
     },
     meta: {
       year: "2023",
@@ -147,6 +153,7 @@ export const PROJECTS: ProjectData[] = [
       src: "/images/projects/divina-fatia/cover.jpg",
       alt: "Logotipo Divina Fatia sobre fundo escuro",
       aspect: "wide",
+      blurDataURL: BLUR_PURPLE,
     },
     meta: {
       year: "2024",
@@ -209,6 +216,7 @@ export const PROJECTS: ProjectData[] = [
       src: "/images/projects/vivo/cover.jpg",
       alt: "Arte principal do evento VP Engenharia Vivo 2025",
       aspect: "wide",
+      blurDataURL: BLUR_VIOLET,
     },
     meta: {
       year: "2025",

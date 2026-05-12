@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PROJECTS } from "@/data/projects";
+import { BLUR_GREY } from "@/lib/placeholders";
 
 export const metadata: Metadata = {
   title: "Projetos — Sérgio Paula",
@@ -42,7 +43,7 @@ export default function ProjetosPage() {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PROJECTS.map((project) => (
+            {PROJECTS.map((project, idx) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
@@ -56,9 +57,11 @@ export default function ProjetosPage() {
                       src={project.cover.src}
                       alt={project.cover.alt}
                       fill
-                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL={project.cover.blurDataURL ?? BLUR_GREY}
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+                      {...(idx === 0 ? { priority: true } : { loading: "lazy" })}
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">

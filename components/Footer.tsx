@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { BLUR_AVATAR } from "@/lib/placeholders";
 
 export default function Footer() {
   const [form, setForm] = useState({
@@ -103,6 +104,8 @@ export default function Footer() {
                   fill
                   className="object-cover"
                   sizes="320px"
+                  placeholder="blur"
+                  blurDataURL={BLUR_AVATAR}
                 />
               </div>
               {/* Blz? badge */}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { PROJECTS } from "@/data/projects";
+import { BLUR_GREY } from "@/lib/placeholders";
 
 interface MoreProjectsProps {
   excludeSlugs?: string[];
@@ -53,8 +54,10 @@ export default function MoreProjects({ excludeSlugs = [] }: MoreProjectsProps) {
                     alt={project.cover.alt}
                     fill
                     loading="lazy"
+                    placeholder="blur"
+                    blurDataURL={project.cover.blurDataURL ?? BLUR_GREY}
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">

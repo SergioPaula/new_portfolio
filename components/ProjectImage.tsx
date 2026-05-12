@@ -1,14 +1,18 @@
-"use client";
+// Sem "use client" — zero hooks, zero browser APIs.
+// Renderiza como Server Component em MoreProjects e demais contextos de servidor.
+// Quando importado por Client Components (ProjectHero, Gallery, Section)
+// passa a fazer parte do bundle deles — sem custo extra de hidratação próprio.
 
 import Image from "next/image";
+import { BLUR_GREY } from "@/lib/placeholders";
 
 export type ImageAspect = "video" | "square" | "portrait" | "wide";
 
 const ASPECT_CLASSES: Record<ImageAspect, string> = {
-  video: "aspect-video",
-  square: "aspect-square",
+  video:    "aspect-video",
+  square:   "aspect-square",
   portrait: "aspect-[3/4]",
-  wide: "aspect-[21/9]",
+  wide:     "aspect-[21/9]",
 };
 
 interface ProjectImageProps {
@@ -18,6 +22,7 @@ interface ProjectImageProps {
   priority?: boolean;
   className?: string;
   sizes?: string;
+  blurDataURL?: string;
 }
 
 export default function ProjectImage({
@@ -26,7 +31,8 @@ export default function ProjectImage({
   aspect = "video",
   priority = false,
   className = "",
-  sizes = "(max-width: 768px) 100vw, (max-width: 1440px) 80vw, 1152px",
+  sizes = "(max-width: 480px) 100vw, (max-width: 1024px) 80vw, (max-width: 1440px) 60vw, 1152px",
+  blurDataURL,
 }: ProjectImageProps) {
   const aspectClass = ASPECT_CLASSES[aspect];
 
@@ -52,6 +58,8 @@ export default function ProjectImage({
         fill
         className="object-cover"
         sizes={sizes}
+        placeholder="blur"
+        blurDataURL={blurDataURL ?? BLUR_GREY}
         {...(priority ? { priority: true } : { loading: "lazy" })}
       />
     </div>

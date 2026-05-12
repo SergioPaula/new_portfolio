@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { BLUR_AVATAR } from "@/lib/placeholders";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -86,6 +87,8 @@ export default function Navbar() {
             fill
             sizes="40px"
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={BLUR_AVATAR}
             priority
           />
         </div>
@@ -170,6 +173,8 @@ export default function Navbar() {
             fill
             sizes="32px"
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={BLUR_AVATAR}
             priority
           />
         </div>
