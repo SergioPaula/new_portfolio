@@ -512,6 +512,43 @@ export default function SobrePage() {
                     andamento)
                   </p>
                 </motion.div>
+
+                {/* Resume button */}
+                <motion.div {...fadeUp(0.5)} style={{ marginTop: "2.5rem" }}>
+                  <a
+                    href="/images/sobre/Sergio_Paula_Curriculo_PT.pdf"
+                    download
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "var(--space-xs)",
+                      padding: "0.75rem 1.75rem",
+                      borderRadius: 9999,
+                      border: "2px solid var(--azul-1)",
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontWeight: 800,
+                      fontStretch: "condensed",
+                      textTransform: "uppercase",
+                      letterSpacing: "-0.01em",
+                      fontSize: "var(--text-small)",
+                      color: "var(--azul-1)",
+                      textDecoration: "none",
+                      transition: "background 0.2s, color 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.background = "var(--azul-1)";
+                      el.style.color = "var(--white)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.background = "transparent";
+                      el.style.color = "var(--azul-1)";
+                    }}
+                  >
+                    BAIXAR CURRÍCULO
+                  </a>
+                </motion.div>
               </div>
 
             </div>

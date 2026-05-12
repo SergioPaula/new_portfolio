@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CountUp from "./CountUp";
+import Link from "next/link";
 
 const STATS = [
   { end: 15, suffix: "+", label: "Anos de\nExperiência" },
@@ -141,8 +142,8 @@ export default function AboutMe() {
 
 
           {/* MY STORY button */}
-          <a
-            href="#"
+          <Link
+            href="/sobre"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -172,7 +173,7 @@ export default function AboutMe() {
             }}
           >
             MINHA HISTÓRIA
-          </a>
+          </Link>
         </motion.div>
 
         {/* ── Right: illustration (45%) ── */}

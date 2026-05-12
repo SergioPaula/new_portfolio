@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 64, 128, 256, 384],
     formats: ["image/avif", "image/webp"],
   },
+  // Aliases em /projetos/[slug] → /projects/[slug]
+  // Páginas "órfãs": acessíveis por URL direto, sem links públicos
+  async redirects() {
+    return [
+      { source: "/projetos/devassa",      destination: "/projects/devassa",      permanent: false },
+      { source: "/projetos/club-social",  destination: "/projects/club-social",  permanent: false },
+      { source: "/projetos/divina-fatia", destination: "/projects/divina-fatia", permanent: false },
+      { source: "/projetos/vivo",         destination: "/projects/vivo",         permanent: false },
+    ];
+  },
   async rewrites() {
     return [
       {

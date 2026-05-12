@@ -375,7 +375,6 @@ export default function Fortalezas() {
             fontSize: "var(--text-body)",
             color: "var(--gray-600)",
             lineHeight: 1.7,
-            maxWidth: 560,
           }}
         >
           Vejo o design, como um ALQUIMISTA, como um processo de transformação:<br />

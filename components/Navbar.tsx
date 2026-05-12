@@ -10,8 +10,8 @@ import { BLUR_AVATAR } from "@/lib/placeholders";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Sobre", href: "/sobre" },
-  // TODO: reconectar para página do projeto quando pronta
-  { label: "Projetos", href: "/em-construcao.html" },
+  // Redirects to the under construction page
+  { label: "Projetos", href: "/em-construcao" },
   { label: "Blog", href: "/blog" },
 ];
 

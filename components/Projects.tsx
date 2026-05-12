@@ -21,7 +21,7 @@ const PROJECTS = [
       "Design de apresentação para o maior evento de vendas nacional da marca.",
     accent: "#f5a623",
     // TODO: reconectar para página do projeto quando pronta
-    href: "/em-construcao.html",
+    href: "/em-construcao",
   },
   {
     image: "/images/projetos/cbsocial.png",
@@ -32,7 +32,7 @@ const PROJECTS = [
       "Apresentação visual de alto impacto para a convenção de vendas da Mondelēz International.",
     accent: "var(--azul-1)",
     // TODO: reconectar para página do projeto quando pronta
-    href: "/em-construcao.html",
+    href: "/em-construcao",
   },
   {
     image: "/images/projetos/f5c50c86bd26665a8a9eec6d5244c6d7.jpg",
@@ -43,7 +43,7 @@ const PROJECTS = [
       "Criação completa da identidade visual para confeitaria artesanal.",
     accent: "var(--roxo-1)",
     // TODO: reconectar para página do projeto quando pronta
-    href: "/em-construcao.html",
+    href: "/em-construcao",
   },
   {
     image: "/images/projetos/s20.png",
@@ -54,7 +54,7 @@ const PROJECTS = [
       "Apresentação de diretoria e arte visual para o evento VP Engenharia Vivo 2025.",
     accent: "#660099",
     // TODO: reconectar para página do projeto quando pronta
-    href: "/em-construcao.html",
+    href: "/em-construcao",
   },
 ];
 
@@ -322,8 +322,8 @@ export default function Projects() {
         }}
       >
         {/* TODO: reconectar para página do projeto quando pronta */}
-        <a
-          href="/em-construcao.html"
+        <Link
+          href="/em-construcao"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -349,7 +349,7 @@ export default function Projects() {
           }}
         >
           Ver Todos os Projetos
-        </a>
+        </Link>
       </div>
     </section>
   );
