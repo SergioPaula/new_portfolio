@@ -3,29 +3,30 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Lenis from '@studio-freight/lenis'
+import { frame, cancelFrame } from 'framer-motion'
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
     })
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+    const update = ({ timestamp }: { timestamp: number }) => {
+      lenis.raf(timestamp)
     }
-
-    requestAnimationFrame(raf)
+    frame.update(update, true)
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(window as any).__lenis = lenis
 
-    return () => lenis.destroy()
+    return () => {
+      cancelFrame(update)
+      lenis.destroy()
+    }
   }, [])
 
   // Scroll to top on route change, or to hash anchor if present

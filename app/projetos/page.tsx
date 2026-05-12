@@ -277,11 +277,11 @@ export default function ProjetosGalleryPage() {
               <img src={`/portf_temp/${activeProject.slides[activeSlide]}`} alt="Slide" />
             )}
           </div>
-          <button className="modal-arrow modal-arrow-next" onClick={goNext} disabled={activeProject && activeSlide === activeProject.slides.length - 1}>›</button>
+          <button className="modal-arrow modal-arrow-next" onClick={goNext} disabled={!!activeProject && activeSlide === activeProject.slides.length - 1}>›</button>
           
           <div className="modal-arrows-mobile">
             <button className="modal-arrow" onClick={goPrev} disabled={activeSlide === 0}>‹</button>
-            <button className="modal-arrow" onClick={goNext} disabled={activeProject && activeSlide === activeProject.slides.length - 1}>›</button>
+            <button className="modal-arrow" onClick={goNext} disabled={!!activeProject && activeSlide === activeProject.slides.length - 1}>›</button>
           </div>
         </div>
 

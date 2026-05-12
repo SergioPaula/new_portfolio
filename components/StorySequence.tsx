@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import {
   motion,
   useScroll,
@@ -21,15 +21,6 @@ export default function StorySequence() {
     target: containerRef,
     offset: ["start start", "end end"],
   });
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lenis = (window as any).__lenis;
-    if (!lenis) return;
-    const onScroll = () => {};
-    lenis.on("scroll", onScroll);
-    return () => lenis.off("scroll", onScroll);
-  }, []);
 
   // Scroll-driven position transforms
   const xOffset = useTransform(

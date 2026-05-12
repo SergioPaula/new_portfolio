@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Globe } from "lucide-react";
 
@@ -198,15 +198,6 @@ function RpgCard() {
     target: ref,
     offset: ["start end", "end start"],
   });
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lenis = (window as any).__lenis;
-    if (!lenis) return;
-    const onScroll = () => {};
-    lenis.on("scroll", onScroll);
-    return () => lenis.off("scroll", onScroll);
-  }, []);
 
   const bgY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 

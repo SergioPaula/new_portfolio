@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // ── Customize here ───────────────────────────────────────
@@ -26,15 +26,6 @@ export default function InvisibilidadeReveal() {
     target: triggerRef,
     offset: ["start end", "start start"],
   });
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lenis = (window as any).__lenis;
-    if (!lenis) return;
-    const onScroll = () => {};
-    lenis.on("scroll", onScroll);
-    return () => lenis.off("scroll", onScroll);
-  }, []);
 
   // Drives the container's height from 0 → full viewport height.
   const containerHeight = useTransform(

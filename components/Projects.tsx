@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -221,14 +221,6 @@ export default function Projects() {
     offset: ["start start", "end end"],
   });
 
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lenis = (window as any).__lenis;
-    if (!lenis) return;
-    const onScroll = () => {};
-    lenis.on("scroll", onScroll);
-    return () => lenis.off("scroll", onScroll);
-  }, []);
 
   return (
     <section id="projetos" style={{ background: "var(--white)" }}>
