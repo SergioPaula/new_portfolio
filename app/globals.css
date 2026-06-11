@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* ─── Design System Tokens ─────────────────────────────── */
 :root {
@@ -352,4 +353,113 @@ body {
   .overlay-slot-2 .overlay-img { width: 40vw; height: 110vh; }
   .overlay-slot-3 { left: 400vw; width: 52vw; }
   .overlay-slot-3 .overlay-img { width: 52vw; height: 143vh; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BLOG TYPOGRAPHY (Coustard & Karla)
+   ═══════════════════════════════════════════════════════════ */
+
+.prose-blog {
+  font-family: var(--font-karla), var(--font-body);
+  font-size: 18px;
+  line-height: 31px;
+  color: #222222;
+}
+
+.prose-blog :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-coustard), var(--font-display);
+  color: #222222;
+  font-weight: 400;
+}
+
+.prose-blog :where(h1) {
+  font-size: 48px;
+  line-height: 72px;
+}
+
+.prose-blog :where(a) {
+  color: var(--azul-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.prose-blog :where(blockquote) {
+  font-family: var(--font-coustard), var(--font-display);
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.4;
+  text-align: center;
+  border: none;
+  padding: 2rem 1rem;
+  margin: 4rem 0;
+  color: #222222;
+  font-weight: 400;
+  position: relative;
+  font-style: normal;
+}
+
+.prose-blog :where(blockquote)::before {
+  content: '“';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 140px;
+  color: #f0f0f0;
+  font-family: serif;
+  z-index: -1;
+  line-height: 1;
+}
+
+.prose-blog :where(blockquote p:last-of-type) {
+  margin-bottom: 0;
+}
+
+.prose-blog :where(blockquote cite) {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gray-400);
+  margin-top: 1.5rem;
+  font-style: normal;
+}
+
+/* Visão Geral — 2 colunas no desktop, 1 no mobile */
+@media (max-width: 640px) {
+  .pipa-overview-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Overlay informativo ao hover em imagens de estampa */
+.stamp-hover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.stamp-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 71, 52, 0.92);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.stamp-hover-container:hover .stamp-hover-overlay,
+.stamp-hover-container:focus-within .stamp-hover-overlay {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp-hover-overlay {
+    transition: none;
+  }
 }
