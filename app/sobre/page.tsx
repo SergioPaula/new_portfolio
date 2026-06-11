@@ -6,7 +6,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Fortalezas from "@/components/Fortalezas";
 import Footer from "@/components/Footer";
-import { InstagramLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { InstagramLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 

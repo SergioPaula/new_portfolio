@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { InstagramLogo, LinkedinLogo, At, WhatsappLogo } from "@phosphor-icons/react";
+import { InstagramLogo, LinkedinLogo, At, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 const socialLinks = [
   {

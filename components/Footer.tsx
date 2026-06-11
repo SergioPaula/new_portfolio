@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BLUR_AVATAR } from "@/lib/placeholders";
@@ -389,6 +390,11 @@ export default function Footer({ minimal = false }: { minimal?: boolean }) {
           >
             © 2026 Sérgio Paula. Todos os direitos reservados.
           </p>
+          <div className="flex gap-4">
+            <Link href="/legal/termos-de-uso" className="font-body text-xs text-gray-400 hover:text-azul-1 transition-colors">Termos de Uso</Link>
+            <Link href="/legal/privacidade" className="font-body text-xs text-gray-400 hover:text-azul-1 transition-colors">Privacidade</Link>
+            <Link href="/legal/cookies" className="font-body text-xs text-gray-400 hover:text-azul-1 transition-colors">Cookies</Link>
+          </div>
           <p
             style={{
               fontFamily: "var(--font-body)",

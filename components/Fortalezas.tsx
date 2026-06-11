@@ -32,7 +32,7 @@ const HARD_SKILLS = [
     name: "PowerPoint",
     percent: 95,
     color: "#e74c3c",
-    iconSrc: "/images/sobre/Microsoft_Office_PowerPoint_(2025–present).svg",
+    iconSrc: "/images/sobre/Microsoft_Office_PowerPoint_(2025-present).svg",
     isBlackBg: true,
   },
   {

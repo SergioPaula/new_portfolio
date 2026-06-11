@@ -23,6 +23,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# blog (work in progress)
+app/blog/\[slug\]/
+app/blog/contato/
+app/blog/sobre-mim/
+app/blog/*.local-dev
+app/blog/*.bak
+components/Blog/
+content/
+lib/blog.ts
+public/images/blog/
+
 # large files / backups / nested repos
 PORTFOLIO.zip
 /PORTFOLIO/
@@ -42,3 +53,5 @@ Textos_Revisao_Sobre_Mim_arquivos/
 
 # reference screenshots (not needed for the project)
 referências/
+
+.vercel

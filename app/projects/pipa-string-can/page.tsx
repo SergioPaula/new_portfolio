@@ -65,17 +65,20 @@ const PRINTED_COLORS = [
 ];
 
 const TECH_SHEET = [
-  { label: "Técnica de criação", value: "Desenho manual + Vetorização Illustrator" },
+  { label: "Técnica de criação", value: "Desenho manual + Vetorização" },
   { label: "Impressão", value: "Serigrafia" },
   { label: "Cor da camiseta", value: "#104734" },
   { label: "Telas de impressão", value: "3" },
   { label: "Ferramentas", value: "Illustrator" },
+  { label: "Aplicação", value: "Frente e costas" },
+  { label: "Estilo", value: "Retrô brasileiro" },
+  { label: "Inspiração", value: "Cultura popular e memórias dos anos 80 e 90" },
 ];
 
 export default function PipaStringCanPage() {
   return (
     <>
-      <title>PIPA STRING CAN — Estampa · Serigrafia · Sérgio Paula</title>
+      <title>LINHA NA LATA — Estampa · Serigrafia · Sérgio Paula</title>
       <Navbar />
 
       {/* ─── HERO ─── CAPA-sentado-calcada.webp — 1200×896 */}
@@ -140,7 +143,7 @@ export default function PipaStringCanPage() {
               marginBottom: "1rem",
             }}
           >
-            PIPA STRING CAN
+            LINHA NA LATA
           </h1>
           <p
             style={{
@@ -151,8 +154,7 @@ export default function PipaStringCanPage() {
               maxWidth: 560,
             }}
           >
-            Estampa para camiseta desenvolvida com técnica de desenho manual
-            e vetorização, projetada para impressão em serigrafia com 3 telas.
+            Uma homenagem às tardes de vento, aos dedos marcados pela linha e à criatividade de transformar uma simples lata em diversão. Uma estampa inspirada nas memórias de quem cresceu soltando pipa nas ruas brasileiras.
           </p>
         </div>
       </motion.section>
@@ -225,16 +227,19 @@ export default function PipaStringCanPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                A estampa Pipa String Can nasce de uma referência visual simples e carregada
-                de significado: a lata de linha usada para soltar pipa. Um objeto popular,
-                funcional e esteticamente rico, que guarda em sua forma e nos detalhes de
-                uso uma história sobre brincadeira e rua.
+                Antes das carretilhas modernas e dos acessórios especializados, existia a criatividade.
               </p>
               <p style={bodyText}>
-                O projeto foi desenvolvido para aplicação em serigrafia — uma técnica que
-                impõe limitações criativas produtivas, forçando decisões precisas sobre
-                forma, cor e separação de tons. A escolha da técnica moldou toda a linguagem
-                visual da estampa.
+                Quem cresceu nos anos 80 e 90 provavelmente se lembra das tardes de céu azul, das disputas entre amigos e das latas de óleo ou de achocolatado transformadas em carretéis improvisados. Elas tinham o tamanho perfeito para a mão e permitiam recolher a linha rapidamente, tornando-se parte da brincadeira quase sem perceber.
+              </p>
+              <p style={bodyText}>
+                Objetos comuns ganhavam novos significados.
+              </p>
+              <p style={bodyText}>
+                A estampa Linha na Lata nasce dessa memória afetiva. Mais do que representar uma lata, a proposta é celebrar a inventividade e a simplicidade de uma época em que a diversão cabia em poucas coisas: vento, linha, amigos e tempo livre.
+              </p>
+              <p style={bodyText}>
+                Pensada para uma geração que reconhece essa imagem em poucos segundos, a peça procura transformar uma lembrança coletiva em linguagem visual.
               </p>
             </div>
           </div>
@@ -286,15 +291,19 @@ export default function PipaStringCanPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                Tudo começou com papel e caneta. O esboço manual permite explorar formas sem
-                o rigor técnico do digital — linhas imperfeitas, volume orgânico e personalidade
-                de traço. Nesta fase, o foco estava em capturar a essência do objeto antes de
-                qualquer intervenção digital.
+                Todo projeto começa pela observação.
               </p>
               <p style={bodyText}>
-                O desenho à mão foi digitalizado em alta resolução para servir de base ao
-                processo de vetorização, preservando a intenção do traço original enquanto
-                abre caminho para a precisão necessária na separação de cores.
+                Antes do computador, vieram o papel e a caneta. O objetivo era capturar a personalidade do objeto e preservar suas imperfeições, marcas e proporções familiares.
+              </p>
+              <p style={bodyText}>
+                Os primeiros esboços foram feitos manualmente, permitindo explorar formas com mais liberdade e espontaneidade. Nessa etapa, o importante não era a precisão, mas a memória.
+              </p>
+              <p style={bodyText}>
+                Depois de digitalizado, o desenho serviu como base para a construção vetorial, mantendo a essência do traço original e preparando o projeto para o processo de impressão.
+              </p>
+              <p style={bodyText}>
+                Porque algumas ideias nascem melhor longe da tela.
               </p>
             </div>
           </div>
@@ -331,12 +340,20 @@ export default function PipaStringCanPage() {
           >
             FRENTE E COSTAS VETORIZADAS
           </h2>
-          <p style={{ ...bodyText, maxWidth: 720, marginBottom: "2rem" }}>
-            Com o esboço digitalizado, a vetorização no Illustrator transformou as linhas
-            orgânicas em formas geométricas precisas. Cada elemento foi construído em camadas
-            separadas por cor — garantindo controle total para a separação das telas de
-            serigrafia. O resultado são duas artes complementares: estampa de frente e de costas.
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720, marginBottom: "2rem" }}>
+            <p style={bodyText}>
+              Com o desenho definido, o Illustrator foi utilizado para transformar os traços em uma estrutura limpa e precisa.
+            </p>
+            <p style={bodyText}>
+              A composição foi pensada em duas aplicações complementares: uma arte principal nas costas e uma intervenção menor na frente da camiseta.
+            </p>
+            <p style={bodyText}>
+              A intenção era criar uma peça equilibrada, permitindo que os elementos conversassem entre si sem competir por atenção.
+            </p>
+            <p style={bodyText}>
+              Cada linha, área de preenchimento e detalhe foram organizados pensando não apenas na estética, mas também na produção em serigrafia, garantindo fidelidade entre o arquivo digital e o resultado impresso.
+            </p>
+          </div>
 
           <div
             style={{
@@ -396,13 +413,23 @@ export default function PipaStringCanPage() {
           >
             4 CORES VISUALMENTE · 3 TELAS DE IMPRESSÃO
           </h2>
-          <p style={{ ...bodyText, maxWidth: 720, marginBottom: "2.5rem" }}>
-            A camiseta já é a quarta cor. Ao escolher a base em verde escuro, a cor da peça
-            passa a integrar a composição sem custo adicional de impressão. Na serigrafia,
-            cada cor representa uma tela, uma passagem e mais custo de produção. Com apenas
-            3 telas, a estampa atinge um resultado visual rico e equilibrado — uma decisão
-            estratégica que reduz custo sem sacrificar impacto.
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720, marginBottom: "2.5rem" }}>
+            <p style={bodyText}>
+              Desde o início, a estampa foi pensada para ser produzida em serigrafia.
+            </p>
+            <p style={bodyText}>
+              Ao invés de enxergar a limitação de cores como um problema, ela foi incorporada como parte da linguagem visual do projeto.
+            </p>
+            <p style={bodyText}>
+              A própria camiseta participa da composição e funciona como a quarta cor da arte. Dessa forma, apenas três telas são necessárias para criar uma resultado visual rico e equilibrado.
+            </p>
+            <p style={bodyText}>
+              Essa escolha não foi apenas econômica. Ela também reforça a estética das camisetas clássicas, aproximando o projeto das impressões retrô que marcaram diferentes décadas.
+            </p>
+            <p style={bodyText}>
+              A limitação técnica acabou se transformando em identidade.
+            </p>
+          </div>
 
           {/* Cor da camiseta */}
           <div style={{ marginBottom: "2rem" }}>
@@ -575,20 +602,22 @@ export default function PipaStringCanPage() {
             }}
           >
             <p style={bodyText}>
-              A serigrafia é uma das técnicas de impressão mais antigas e ainda amplamente
-              usada na confecção de camisetas. Cada cor é aplicada separadamente através de
-              uma tela (matriz) com a arte aberta em emulsão fotossensível.
+              A serigrafia faz parte da história das camisetas.
             </p>
             <p style={bodyText}>
-              O resultado é uma impressão com textura tátil, opacidade forte e durabilidade
-              superior a outras técnicas. A limitação no número de cores é compensada pela
-              qualidade e permanência da impressão — tornando a serigrafia a escolha ideal
-              para estampas com paleta definida e alto volume de peças.
+              Sua textura, durabilidade e aspecto artesanal continuam sendo características valorizadas por quem aprecia peças com personalidade.
             </p>
             <p style={bodyText}>
-              Para esta estampa, a técnica foi escolhida desde a fase de concepção: a paleta
-              de 3 telas e a construção vetorial precisa são consequências diretas das
-              exigências técnicas — não adaptações posteriores.
+              Por isso, o processo de impressão não foi uma decisão tomada no final do projeto. Ele participou desde o começo.
+            </p>
+            <p style={bodyText}>
+              A quantidade reduzida de cores, a espessura dos traços e a separação dos elementos foram desenvolvidas especificamente para esse método.
+            </p>
+            <p style={bodyText}>
+              Mais do que reproduzir uma imagem, a intenção era criar uma peça que carregasse a aparência e a presença das antigas estampas serigráficas, valorizando a matéria, a tinta e o toque.
+            </p>
+            <p style={bodyText}>
+              Porque algumas técnicas envelhecem. Outras se tornam clássicas.
             </p>
           </div>
         </motion.div>
@@ -715,7 +744,7 @@ export default function PipaStringCanPage() {
                     color: "rgba(255,255,255,0.55)",
                   }}
                 >
-                  Coleção · Pipa String Can
+                  Coleção · Linha na Lata
                 </p>
                 <p
                   style={{
@@ -737,8 +766,7 @@ export default function PipaStringCanPage() {
                     maxWidth: 260,
                   }}
                 >
-                  Desenvolvida para ampliar o drop de lançamento da marca — mesmo universo
-                  visual, nova composição.
+                  Desenvolvida para expandir o universo visual da coleção, mantendo a mesma linguagem gráfica, referências culturais e estética inspirada nas memórias de rua que marcaram uma geração.
                 </p>
               </div>
             </div>

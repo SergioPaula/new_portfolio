@@ -9,13 +9,6 @@ export default function IntroScreen() {
   const [visible, setVisible] = useState(true);
   const reducedMotion = useReducedMotion();
 
-  const floatProps = reducedMotion
-    ? {}
-    : {
-        animate: { y: [0, -5, 0] },
-        transition: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-      };
-
   return (
     <AnimatePresence>
       {visible && (
@@ -38,7 +31,15 @@ export default function IntroScreen() {
               — A Vaca Roxa&nbsp;·&nbsp;Seth Godin
             </p>
 
-            <motion.div className={styles.cowWrap} {...floatProps}>
+            <motion.div
+              className={styles.cowWrap}
+              animate={reducedMotion ? undefined : { y: [0, -5, 0] }}
+              transition={
+                reducedMotion
+                  ? undefined
+                  : { duration: 2.8, repeat: Infinity, ease: "easeInOut" }
+              }
+            >
               <Image
                 src="/images/vaca-roxa.webp"
                 alt="Ilustração de uma vaca roxa — símbolo da originalidade"

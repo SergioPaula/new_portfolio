@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { Coustard, Karla } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import CookieBanner from "@/components/CookieBanner";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+
+const coustard = Coustard({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-coustard",
+});
+
+const karla = Karla({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-karla",
+});
 
 export const metadata: Metadata = {
   title: "Sérgio Paula — Designer Gráfico & Digital",
@@ -22,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className={`${coustard.variable} ${karla.variable}`}>
       <head>
         <link rel="preconnect" href="https://cdn.simpleicons.org" />
       </head>
@@ -30,7 +45,10 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <CookieBanner />
+        <AnalyticsTracker />
       </body>
     </html>
   );
 }
+

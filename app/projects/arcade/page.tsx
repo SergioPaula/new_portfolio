@@ -152,9 +152,7 @@ export default function ArcadePage() {
               maxWidth: 560,
             }}
           >
-            Estampa para camiseta inspirada na estética retro-digital das
-            arcades dos anos 80 e 90, desenvolvida com pintura digital em
-            Photoshop para aplicação em DTG e DTF.
+            Uma homenagem às tardes escondidas no fliperama, às fichas no bolso e aos golpes decorados no Street Fighter. Uma estampa criada para quem cresceu entre máquinas de arcade, tubos de imagem e a cultura dos anos 80 e 90.
           </p>
         </div>
       </motion.section>
@@ -194,6 +192,40 @@ export default function ArcadePage() {
           </Link>
         </motion.div>
 
+        {/* ─── STORYTELLING: Continue? ─── */}
+        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
+              color: "var(--gray-900)",
+              marginBottom: "1.5rem",
+            }}
+          >
+            # Continue?
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
+            <p style={bodyText}>
+              Quem cresceu nos anos 80 e 90 provavelmente tem uma história com o fliperama.
+            </p>
+            <p style={bodyText}>
+              Muitas vezes, ele ficava dentro de bares, lugares que os pais não consideravam adequados para crianças. Talvez por isso existisse um certo sentimento de aventura. Jogar Street Fighter, Metal Slug ou King of Fighters era quase um ritual: juntar moedas, desafiar os amigos e tentar descobrir os golpes secretos.
+            </p>
+            <p style={bodyText}>
+              Esta estampa nasceu dessa memória.
+            </p>
+            <p style={bodyText}>
+              Busquei criar uma peça voltada para quem viveu essa época. O layout foi pensado para ter uma grande arte nas costas e uma aplicação menor na frente, trazendo o movimento clássico do Hadouken — baixo, diagonal para frente e soco — algo que qualquer fã de Street Fighter reconhece instantaneamente.
+            </p>
+            <p style={bodyText}>
+              Visualmente, procurei reproduzir a linguagem das estampas retrô, utilizando uma quantidade reduzida de cores e texturas para criar um aspecto próximo ao da serigrafia tradicional. Além da estética vintage, essa decisão contribui para uma aplicação mais leve e confortável em processos como DTF e DTG.
+            </p>
+            <p style={bodyText}>
+              Mais do que uma homenagem aos videogames, esta peça procura resgatar a sensação de uma época em que diversão, desafio e amizade cabiam dentro de algumas fichas e de uma tarde escondida dos pais.
+            </p>
+          </div>
+        </motion.div>
+
         {/* ─── VISÃO GERAL ─── */}
         <motion.div
           {...fadeUp()}
@@ -220,16 +252,19 @@ export default function ArcadePage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                A estampa Arcade parte da nostalgia das máquinas de videogame
-                dos anos 80 e 90 — uma iconografia que mistura pixels, tubos de
-                raio catódico e a cultura pop de uma época. Uma estética que
-                ainda ressoa com força no design contemporâneo.
+                Antes dos videogames ocuparem a sala de casa, existia um pequeno ritual. Juntar algumas moedas, encontrar os amigos e, muitas vezes, ir escondido até o bar da esquina para passar horas em frente às máquinas de fliperama.
               </p>
               <p style={bodyText}>
-                O projeto foi desenvolvido para aplicação em DTG
-                (Direct-to-Garment) e DTF (Direct-to-Film), técnicas que
-                permitem reproduzir a riqueza de texturas e gradientes presentes
-                na pintura digital, sem as limitações de paleta da serigrafia.
+                Para muita gente, aquele ambiente era mais do que um lugar para jogar. Era um espaço de descoberta, competition e amizade. Ali nasceram rivalidades em Street Fighter, desafios intermináveis em Metal Slug e a sensação única de tentar descobrir um golpe novo observando alguém jogar.
+              </p>
+              <p style={bodyText}>
+                A estampa Arcade nasce dessa memória.
+              </p>
+              <p style={bodyText}>
+                Pensada para quem cresceu nos anos 80 e 90, ela combina referências da cultura dos videogames com uma linguagem visual inspirada nas antigas máquinas de arcade, trazendo elementos retrô reinterpretados para uma peça contemporânea.
+              </p>
+              <p style={bodyText}>
+                Mais do que reproduzir uma estética nostálgica, a intenção foi capturar uma sensação: aquela mistura de diversão, desafio e admiração que marcou toda uma geração.
               </p>
             </div>
           </div>
@@ -251,7 +286,7 @@ export default function ArcadePage() {
           </div>
         </motion.div>
 
-        {/* ─── ORGANIZAÇÃO NO PHOTOSHOP ─── */}
+        {/* ─── REFERÊNCIA COM IA ─── */}
         <motion.div
           {...fadeUp()}
           className="pipa-overview-grid"
@@ -264,7 +299,7 @@ export default function ArcadePage() {
           }}
         >
           <div>
-            <SLabel>Pintura Digital</SLabel>
+            <SLabel>Referência com IA</SLabel>
             <h2
               className="font-display"
               style={{
@@ -273,22 +308,17 @@ export default function ArcadePage() {
                 marginBottom: "1.5rem",
               }}
             >
-              ORGANIZAÇÃO DAS CAMADAS
+              IA COMO PONTO DE PARTIDA
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                O processo de pintura digital foi construído com uma estrutura
-                de camadas organizada por grupos funcionais — fundo, elementos
-                principais, texturas, efeitos e tipografia. Essa organização
-                facilita ajustes pontuais e garante uma exportação limpa para o
-                arquivo de impressão.
+                A inteligência artificial foi utilizada como ferramenta de pesquisa e exploração visual. Mais do que gerar imagens prontas, ela serviu como um painel de referências dinâmico, permitindo testar rapidamente atmosferas, composições e possibilidades estéticas.
               </p>
               <p style={bodyText}>
-                A IA foi usada como ponto de partida para referência visual — não
-                como substituto da criação. Imagens geradas ajudaram a explorar
-                composições e paletas rapidamente antes de qualquer traço
-                digital. A autoria acontece na interpretação, na escolha e na
-                execução: a pintura final é original.
+                A autoria do projeto permanece no processo criativo: interpretar, selecionar, combinar e transformar referências em algo original.
+              </p>
+              <p style={bodyText}>
+                A arte final é resultado de pintura digital e refinamento manual. A IA acelerou a fase de experimentação, mas as decisões de composição, textura, tipografia e acabamento continuam sendo essencialmente humanas.
               </p>
             </div>
           </div>
@@ -307,6 +337,67 @@ export default function ArcadePage() {
               style={{ objectFit: "cover", objectPosition: "center top" }}
               sizes="(max-width: 640px) 100vw, 50vw"
             />
+          </div>
+        </motion.div>
+
+        {/* ─── PINTURA DIGITAL ─── */}
+        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
+          <SLabel>Pintura Digital</SLabel>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+              color: "var(--gray-900)",
+              marginBottom: "1.5rem",
+            }}
+          >
+            CAMADAS E TEXTURA NO PHOTOSHOP
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
+            <p style={bodyText}>
+              Embora a impressão tenha sido pensada para tecnologias como DTG e DTF, a intenção estética sempre esteve próxima das antigas estampas em serigrafia.
+            </p>
+            <p style={bodyText}>
+              Por isso, texturas, pequenos desgastes e variações foram incorporados propositalmente para trazer personalidade à arte e evitar uma aparência excessivamente digital.
+            </p>
+            <p style={bodyText}>
+              O arquivo foi construído em camadas independentes, permitindo ajustes de iluminação, contraste e composição sem comprometer a flexibilidade do projeto.
+            </p>
+            <p style={bodyText}>
+              O objetivo era encontrar um equilíbrio entre riqueza visual e conforto, criando uma estampa cheia de detalhes, mas leve aos olhos — como as camisetas retrô que marcaram a infância e a adolescência de uma geração.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* ─── TIPOGRAFIA APLICADA ─── */}
+        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
+          <SLabel>Tipografia Aplicada</SLabel>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+              color: "var(--gray-900)",
+              marginBottom: "1.5rem",
+            }}
+          >
+            TIPO, HIERARQUIA E COMPOSIÇÃO
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
+            <p style={bodyText}>
+              A tipografia foi escolhida para reforçar a atmosfera retro-digital do projeto.
+            </p>
+            <p style={bodyText}>
+              Enquanto a fonte principal faz referência ao universo dos videogames clássicos, os elementos secundários ajudam a organizar a informação e criar equilíbrio visual na composição.
+            </p>
+            <p style={bodyText}>
+              A estampa frontal foi pensada como um detalhe para quem conhece a linguagem dos jogos. O movimento representado faz referência ao comando clássico do Hadouken, de Street Fighter — baixo, diagonal para frente e soco.
+            </p>
+            <p style={bodyText}>
+              Um elemento discreto, mas imediatamente reconhecido por quem passou horas tentando acertar os golpes especiais nas máquinas de arcade.
+            </p>
+            <p style={bodyText}>
+              A ideia era criar uma conexão silenciosa entre a peça e quem compartilha dessa memória.
+            </p>
           </div>
         </motion.div>
 
