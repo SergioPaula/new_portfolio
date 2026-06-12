@@ -193,40 +193,6 @@ export default function ArcadePage() {
         </motion.div>
 
         {/* ─── STORYTELLING: Continue? ─── */}
-        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
-              color: "var(--gray-900)",
-              marginBottom: "1.5rem",
-            }}
-          >
-            # Continue?
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
-            <p style={bodyText}>
-              Quem cresceu nos anos 80 e 90 provavelmente tem uma história com o fliperama.
-            </p>
-            <p style={bodyText}>
-              Muitas vezes, ele ficava dentro de bares, lugares que os pais não consideravam adequados para crianças. Talvez por isso existisse um certo sentimento de aventura. Jogar Street Fighter, Metal Slug ou King of Fighters era quase um ritual: juntar moedas, desafiar os amigos e tentar descobrir os golpes secretos.
-            </p>
-            <p style={bodyText}>
-              Esta estampa nasceu dessa memória.
-            </p>
-            <p style={bodyText}>
-              Busquei criar uma peça voltada para quem viveu essa época. O layout foi pensado para ter uma grande arte nas costas e uma aplicação menor na frente, trazendo o movimento clássico do Hadouken — baixo, diagonal para frente e soco — algo que qualquer fã de Street Fighter reconhece instantaneamente.
-            </p>
-            <p style={bodyText}>
-              Visualmente, procurei reproduzir a linguagem das estampas retrô, utilizando uma quantidade reduzida de cores e texturas para criar um aspecto próximo ao da serigrafia tradicional. Além da estética vintage, essa decisão contribui para uma aplicação mais leve e confortável em processos como DTF e DTG.
-            </p>
-            <p style={bodyText}>
-              Mais do que uma homenagem aos videogames, esta peça procura resgatar a sensação de uma época em que diversão, desafio e amizade cabiam dentro de algumas fichas e de uma tarde escondida dos pais.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* ─── VISÃO GERAL ─── */}
         <motion.div
           {...fadeUp()}
           className="pipa-overview-grid"
@@ -239,32 +205,34 @@ export default function ArcadePage() {
           }}
         >
           <div>
-            <SLabel>Visão Geral</SLabel>
             <h2
               className="font-display"
               style={{
-                fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+                fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
                 color: "var(--gray-900)",
                 marginBottom: "1.5rem",
               }}
             >
-              A ESTAMPA E O PROJETO
+              # Continue?
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                Antes dos videogames ocuparem a sala de casa, existia um pequeno ritual. Juntar algumas moedas, encontrar os amigos e, muitas vezes, ir escondido até o bar da esquina para passar horas em frente às máquinas de fliperama.
+                Quem cresceu nos anos 80 e 90 provavelmente tem uma história com o fliperama.
               </p>
               <p style={bodyText}>
-                Para muita gente, aquele ambiente era mais do que um lugar para jogar. Era um espaço de descoberta, competition e amizade. Ali nasceram rivalidades em Street Fighter, desafios intermináveis em Metal Slug e a sensação única de tentar descobrir um golpe novo observando alguém jogar.
+                Muitas vezes, ele ficava dentro de bares, lugares que os pais não consideravam adequados para crianças. Talvez por isso existisse um certo sentimento de aventura. Jogar Street Fighter, Metal Slug ou King of Fighters era quase um ritual: juntar moedas, desafiar os amigos e tentar descobrir os golpes secretos.
               </p>
               <p style={bodyText}>
-                A estampa Arcade nasce dessa memória.
+                Esta estampa nasceu dessa memória.
               </p>
               <p style={bodyText}>
-                Pensada para quem cresceu nos anos 80 e 90, ela combina referências da cultura dos videogames com uma linguagem visual inspirada nas antigas máquinas de arcade, trazendo elementos retrô reinterpretados para uma peça contemporânea.
+                Busquei criar uma peça voltada para quem viveu essa época. O layout foi pensado para ter uma grande arte nas costas e uma aplicação menor na frente, trazendo o movimento clássico do Hadouken — baixo, diagonal para frente e soco — algo que qualquer fã de Street Fighter reconhece instantaneamente.
               </p>
               <p style={bodyText}>
-                Mais do que reproduzir uma estética nostálgica, a intenção foi capturar uma sensação: aquela mistura de diversão, desafio e admiração que marcou toda uma geração.
+                Visualmente, procurei reproduzir a linguagem das estampas retrô, utilizando uma quantidade reduzida de cores e texturas para criar um aspecto próximo ao da serigrafia tradicional. Além da estética vintage, essa decisão contribui para uma aplicação mais leve e confortável em processos como DTF e DTG.
+              </p>
+              <p style={bodyText}>
+                Mais do que uma homenagem aos videogames, esta peça procura resgatar a sensação de uma época em que diversão, desafio e amizade cabiam dentro de algumas fichas e de uma tarde escondida dos pais.
               </p>
             </div>
           </div>
@@ -286,7 +254,7 @@ export default function ArcadePage() {
           </div>
         </motion.div>
 
-        {/* ─── REFERÊNCIA COM IA ─── */}
+        {/* ─── PINTURA DIGITAL ─── */}
         <motion.div
           {...fadeUp()}
           className="pipa-overview-grid"
@@ -299,7 +267,7 @@ export default function ArcadePage() {
           }}
         >
           <div>
-            <SLabel>Referência com IA</SLabel>
+            <SLabel>Pintura Digital</SLabel>
             <h2
               className="font-display"
               style={{
@@ -308,17 +276,20 @@ export default function ArcadePage() {
                 marginBottom: "1.5rem",
               }}
             >
-              IA COMO PONTO DE PARTIDA
+              CAMADAS E TEXTURA NO PHOTOSHOP
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <p style={bodyText}>
-                A inteligência artificial foi utilizada como ferramenta de pesquisa e exploração visual. Mais do que gerar imagens prontas, ela serviu como um painel de referências dinâmico, permitindo testar rapidamente atmosferas, composições e possibilidades estéticas.
+                Embora a impressão tenha sido pensada para tecnologias como DTG e DTF, a intenção estética sempre esteve próxima das antigas estampas em serigrafia.
               </p>
               <p style={bodyText}>
-                A autoria do projeto permanece no processo criativo: interpretar, selecionar, combinar e transformar referências em algo original.
+                Por isso, texturas, pequenos desgastes e variações foram incorporados propositalmente para trazer personalidade à arte e evitar uma aparência excessivamente digital.
               </p>
               <p style={bodyText}>
-                A arte final é resultado de pintura digital e refinamento manual. A IA acelerou a fase de experimentação, mas as decisões de composição, textura, tipografia e acabamento continuam sendo essencialmente humanas.
+                O arquivo foi construído em camadas independentes, permitindo ajustes de iluminação, contraste e composição sem comprometer a flexibilidade do projeto.
+              </p>
+              <p style={bodyText}>
+                O objetivo era encontrar um equilíbrio entre riqueza visual e conforto, criando uma estampa cheia de detalhes, mas leve aos olhos — como as camisetas retrô que marcaram a infância e a adolescência de uma geração.
               </p>
             </div>
           </div>
@@ -337,67 +308,6 @@ export default function ArcadePage() {
               style={{ objectFit: "cover", objectPosition: "center top" }}
               sizes="(max-width: 640px) 100vw, 50vw"
             />
-          </div>
-        </motion.div>
-
-        {/* ─── PINTURA DIGITAL ─── */}
-        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
-          <SLabel>Pintura Digital</SLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              color: "var(--gray-900)",
-              marginBottom: "1.5rem",
-            }}
-          >
-            CAMADAS E TEXTURA NO PHOTOSHOP
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
-            <p style={bodyText}>
-              Embora a impressão tenha sido pensada para tecnologias como DTG e DTF, a intenção estética sempre esteve próxima das antigas estampas em serigrafia.
-            </p>
-            <p style={bodyText}>
-              Por isso, texturas, pequenos desgastes e variações foram incorporados propositalmente para trazer personalidade à arte e evitar uma aparência excessivamente digital.
-            </p>
-            <p style={bodyText}>
-              O arquivo foi construído em camadas independentes, permitindo ajustes de iluminação, contraste e composição sem comprometer a flexibilidade do projeto.
-            </p>
-            <p style={bodyText}>
-              O objetivo era encontrar um equilíbrio entre riqueza visual e conforto, criando uma estampa cheia de detalhes, mas leve aos olhos — como as camisetas retrô que marcaram a infância e a adolescência de uma geração.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* ─── TIPOGRAFIA APLICADA ─── */}
-        <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
-          <SLabel>Tipografia Aplicada</SLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              color: "var(--gray-900)",
-              marginBottom: "1.5rem",
-            }}
-          >
-            TIPO, HIERARQUIA E COMPOSIÇÃO
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: 720 }}>
-            <p style={bodyText}>
-              A tipografia foi escolhida para reforçar a atmosfera retro-digital do projeto.
-            </p>
-            <p style={bodyText}>
-              Enquanto a fonte principal faz referência ao universo dos videogames clássicos, os elementos secundários ajudam a organizar a informação e criar equilíbrio visual na composição.
-            </p>
-            <p style={bodyText}>
-              A estampa frontal foi pensada como um detalhe para quem conhece a linguagem dos jogos. O movimento representado faz referência ao comando clássico do Hadouken, de Street Fighter — baixo, diagonal para frente e soco.
-            </p>
-            <p style={bodyText}>
-              Um elemento discreto, mas imediatamente reconhecido por quem passou horas tentando acertar os golpes especiais nas máquinas de arcade.
-            </p>
-            <p style={bodyText}>
-              A ideia era criar uma conexão silenciosa entre a peça e quem compartilha dessa memória.
-            </p>
           </div>
         </motion.div>
 
@@ -431,6 +341,39 @@ export default function ArcadePage() {
             />
           </div>
         </motion.div>
+
+        {/* Highlight quote */}
+        <motion.div
+          {...fadeUp()}
+          style={{
+            marginBottom: sectionGap,
+            textAlign: "center",
+            maxWidth: 800,
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          <blockquote
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "clamp(1.15rem, 2vw, 1.4rem)",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "var(--gray-600)",
+              borderLeft: "none",
+              paddingLeft: 0,
+            }}
+          >
+            “A estampa frontal foi pensada como um detalhe para quem conhece a linguagem dos jogos. O movimento representado faz referência ao comando clássico do Hadouken, de Street Fighter — baixo, diagonal para frente e soco.
+            <br />
+            <br />
+            Um elemento discreto, mas imediatamente reconhecido por quem passou horas tentando acertar os golpes especiais nas máquinas de arcade.
+            <br />
+            <br />
+            A ideia era criar uma conexão silenciosa entre a peça e quem compartilha dessa memória.”
+          </blockquote>
+        </motion.div>
+
 
         {/* ─── DECISÃO DE CORES ─── */}
         <motion.div {...fadeUp()} style={{ marginBottom: sectionGap }}>
@@ -705,6 +648,7 @@ export default function ArcadePage() {
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
               gap: "clamp(0.75rem, 1.5vw, 1.25rem)",
+              marginBottom: "clamp(0.75rem, 1.5vw, 1.25rem)",
             }}
           >
             <div
@@ -774,6 +718,48 @@ export default function ArcadePage() {
                   riqueza cromática.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Row 3 */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "clamp(0.75rem, 1.5vw, 1.25rem)",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                height: "clamp(360px, 50vw, 580px)",
+                borderRadius: 16,
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src={`${IMG}/imagem-gaveta.webp`}
+                alt="Camiseta Arcade guardada em uma gaveta"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div
+              style={{
+                position: "relative",
+                height: "clamp(360px, 50vw, 580px)",
+                borderRadius: 16,
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src={`${IMG}/imagem-varal.webp`}
+                alt="Camiseta Arcade estendida em um varal"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
