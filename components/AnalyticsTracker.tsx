@@ -33,30 +33,24 @@ export default function AnalyticsTracker() {
     };
   }, []);
 
-  // ID do Google Analytics (GA4) obtido das variáveis de ambiente (ou fallback para teste)
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
+  // ID do Google Tag Manager (GTM) obtido das variáveis de ambiente (ou fallback para teste)
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9HL277B";
 
-  // Se o ID não estiver configurado de verdade, ou o consentimento for falso, não insere o script
-  if (!allowAnalytics || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") {
+  // Se o ID não estiver configurado ou o consentimento for falso, não insere o script
+  if (!allowAnalytics || !GTM_ID) {
     return null;
   }
 
   return (
     <>
-      {/* Script principal do gtag.js */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
-      {/* Inicialização do dataLayer e configuração */}
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Script principal do Google Tag Manager */}
+      <Script id="google-tag-manager" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
     </>
