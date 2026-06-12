@@ -29,6 +29,7 @@ app/blog/contato/
 app/blog/sobre-mim/
 app/blog/*.local-dev
 app/blog/*.bak
+app/legal/
 components/Blog/
 content/
 lib/blog.ts
