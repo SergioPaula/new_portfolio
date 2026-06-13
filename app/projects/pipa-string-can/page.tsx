@@ -6,7 +6,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MoreProjects from "@/components/MoreProjects";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 const accent = "#104734";
 

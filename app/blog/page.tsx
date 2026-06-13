@@ -1,77 +1,60 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import BlogNavbar from "@/components/Blog/BlogNavbar";
+import BlogFooter from "@/components/Blog/BlogFooter";
+import BlogHeroCarousel from "@/components/Blog/BlogHeroCarousel";
+import BlogFeatured from "@/components/Blog/BlogFeatured";
+import BlogCard from "@/components/Blog/BlogCard";
+import BlogSidebar from "@/components/Blog/BlogSidebar";
+import { getAllPosts, getTags } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog — Sérgio Paula",
-  description: "Em breve novos conteúdos sobre design, branding e comunicação visual.",
+  description: "Artigos e reflexões sobre design, branding, UX e carreira.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = getAllPosts();
+  const tags = getTags();
+  
+  const featuredPost = posts.find(post => post.meta.featured)?.meta || posts[0]?.meta;
+  const regularPosts = posts.filter(post => post.meta.slug !== featuredPost?.slug).map(p => p.meta);
+
   return (
     <>
-      <Navbar />
-      <main
-        style={{
-          minHeight: "100dvh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "1rem",
-          padding: "2rem",
-          textAlign: "center",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "0.75rem",
-            fontWeight: 600,
-            textTransform: "uppercase",
-            letterSpacing: "0.12em",
-            color: "var(--gray-400)",
-          }}
-        >
-          Blog
-        </p>
-        <h1
-          className="font-display"
-          style={{
-            fontSize: "clamp(2.5rem, 8vw, 6rem)",
-            color: "var(--gray-900)",
-          }}
-        >
-          EM CONSTRUÇÃO
-        </h1>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "clamp(1rem, 2vw, 1.125rem)",
-            color: "var(--gray-600)",
-            lineHeight: 1.6,
-            maxWidth: 480,
-          }}
-        >
-          Em breve novos conteúdos por aqui.
-        </p>
-        <Link
-          href="/"
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "0.9rem",
-            fontWeight: 500,
-            color: "var(--azul-1)",
-            textDecoration: "none",
-            marginTop: "1rem",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.35rem",
-          }}
-        >
-          ← Voltar
-        </Link>
+      <BlogNavbar tags={tags} />
+      
+      {/* NOVO CARROSSEL NO TOPO */}
+      <BlogHeroCarousel />
+
+      <main className="w-full py-20 bg-white">
+        <div className="page-container px-4 sm:px-8 flex flex-col lg:flex-row gap-12 lg:gap-16">
+          
+          {/* Main Content: 80% (3/4) */}
+          <div className="w-full lg:w-3/4">
+            
+            {/* O artigo principal agora fica no topo da coluna da esquerda */}
+            {featuredPost && (
+              <BlogFeatured post={featuredPost} />
+            )}
+
+            {/* Grid dos demais artigos */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 border-t border-gray-100 pt-16">
+              {regularPosts.map(post => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+            
+          </div>
+
+          {/* Sidebar: 20% (1/4) */}
+          <div className="w-full lg:w-1/4">
+            <BlogSidebar tags={tags} recentPosts={posts.map(p => p.meta)} />
+          </div>
+
+        </div>
       </main>
+      <BlogFooter />
     </>
   );
 }
+

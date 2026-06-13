@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -213,8 +214,8 @@ export default function ProjetosGalleryPage() {
         .modal-close { background: none; border: none; color: var(--white); font-size: 1.75rem; line-height: 1; cursor: pointer; padding: 6px 10px; border-radius: 6px; flex-shrink: 0; transition: color 0.2s, background 0.2s; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
         .modal-close:hover { color: var(--azul-1); background: rgba(255,255,255,0.07); }
         .modal-stage { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; min-height: 0; padding: 0 clamp(3rem, 8vw, 5rem); }
-        .modal-img-wrap { width: 100%; max-width: 1100px; max-height: 82vh; aspect-ratio: 16 / 9; }
-        .modal-img-wrap img { width: 100%; height: 100%; object-fit: contain; border-radius: 4px; display: block; }
+        .modal-img-wrap { position: relative; width: 100%; max-width: 1100px; max-height: 82vh; aspect-ratio: 16 / 9; }
+        .modal-img-wrap img { border-radius: 4px; }
         .modal-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.08); border: none; color: var(--white); font-size: 2.25rem; line-height: 1; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; touch-action: manipulation; }
         .modal-arrow:hover { background: rgba(0,168,217,0.25); color: var(--azul-1); }
         .modal-arrow:disabled { opacity: 0.2; pointer-events: none; }
@@ -241,7 +242,7 @@ export default function ProjetosGalleryPage() {
             {projects.map((project, idx) => (
               <div key={idx} className="card" onClick={() => openModal(idx)}>
                 <div className="card-image-wrap">
-                  <img src={`/portf_temp/${project.cover}`} alt={project.name} width="640" height="360" loading={idx < 6 ? undefined : "lazy"} />
+                  <Image src={`/portf_temp/${project.cover}`} alt={project.name} width={640} height={360} priority={idx < 6} />
                   <div className="card-overlay" aria-hidden="true">
                     <div className="card-overlay-icon">
                       <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
@@ -274,7 +275,14 @@ export default function ProjetosGalleryPage() {
           <button className="modal-arrow modal-arrow-prev" onClick={goPrev} disabled={activeSlide === 0}>‹</button>
           <div className="modal-img-wrap">
             {activeProject && (
-              <img src={`/portf_temp/${activeProject.slides[activeSlide]}`} alt="Slide" />
+              <Image
+                src={`/portf_temp/${activeProject.slides[activeSlide]}`}
+                alt="Slide"
+                fill
+                priority
+                sizes="(max-width: 1200px) 100vw, 1100px"
+                style={{ objectFit: "contain" }}
+              />
             )}
           </div>
           <button className="modal-arrow modal-arrow-next" onClick={goNext} disabled={!!activeProject && activeSlide === activeProject.slides.length - 1}>›</button>
