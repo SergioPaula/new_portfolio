@@ -55,4 +55,9 @@ Textos_Revisao_Sobre_Mim_arquivos/
 # reference screenshots (not needed for the project)
 referências/
 
+# scratch / temp files
+scratch/
+*.html
+*.psd
+
 .vercel

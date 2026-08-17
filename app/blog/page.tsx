@@ -15,46 +15,47 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts = getAllPosts();
   const tags = getTags();
-  
+
   const featuredPost = posts.find(post => post.meta.featured)?.meta || posts[0]?.meta;
   const regularPosts = posts.filter(post => post.meta.slug !== featuredPost?.slug).map(p => p.meta);
+
+  const carouselSlides = posts.slice(0, 3).map(p => ({
+    image: p.meta.coverImage,
+    title: p.meta.title,
+    slug: p.meta.slug,
+  }));
 
   return (
     <>
       <BlogNavbar tags={tags} />
-      
-      {/* NOVO CARROSSEL NO TOPO */}
-      <BlogHeroCarousel />
 
-      <main className="w-full py-20 bg-white">
+      {/* Carrossel hero — full width */}
+      <BlogHeroCarousel slides={carouselSlides} />
+
+      {/* Artigo destaque — card sobreposto no rodapé do carrossel */}
+      {featuredPost && <BlogFeatured post={featuredPost} />}
+
+      <main className="w-full pt-12 pb-20 bg-white">
         <div className="page-container px-4 sm:px-8 flex flex-col lg:flex-row gap-12 lg:gap-16">
-          
-          {/* Main Content: 80% (3/4) */}
-          <div className="w-full lg:w-3/4">
-            
-            {/* O artigo principal agora fica no topo da coluna da esquerda */}
-            {featuredPost && (
-              <BlogFeatured post={featuredPost} />
-            )}
 
-            {/* Grid dos demais artigos */}
+          {/* Grid de artigos — 3/4 da largura */}
+          <div className="w-full lg:w-3/4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 border-t border-gray-100 pt-16">
               {regularPosts.map(post => (
                 <BlogCard key={post.slug} post={post} />
               ))}
             </div>
-            
           </div>
 
-          {/* Sidebar: 20% (1/4) */}
+          {/* Sidebar — 1/4 da largura */}
           <div className="w-full lg:w-1/4">
             <BlogSidebar tags={tags} recentPosts={posts.map(p => p.meta)} />
           </div>
 
         </div>
       </main>
+
       <BlogFooter />
     </>
   );
 }
-

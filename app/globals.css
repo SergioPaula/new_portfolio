@@ -4,6 +4,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Forçar geração de utilitários responsivos não detectados pelo scanner automático */
+@source inline("md:block md:-mt-24 md:flex md:hidden");
+
 /* ─── Design System Tokens ─────────────────────────────── */
 :root {
   /* Colors */

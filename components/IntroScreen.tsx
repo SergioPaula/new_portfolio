@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import styles from "./IntroScreen.module.css";
@@ -8,6 +8,69 @@ import styles from "./IntroScreen.module.css";
 export default function IntroScreen() {
   const [visible, setVisible] = useState(true);
   const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (visible) {
+      // Direct scroll to top
+      window.scrollTo(0, 0);
+
+      // Lock body/html scroll
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+      const originalBodyOverflow = document.body.style.overflow;
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      // Stop Lenis smooth scroll
+      const stopLenis = () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const lenis = (window as any).__lenis;
+        if (lenis) {
+          lenis.scrollTo(0, { immediate: true });
+          lenis.stop();
+        }
+      };
+
+      stopLenis();
+      // Retry in case Lenis initializes shortly after mount
+      const intervalId = setInterval(stopLenis, 100);
+      const timeoutId = setTimeout(() => clearInterval(intervalId), 1500);
+
+      return () => {
+        clearInterval(intervalId);
+        clearTimeout(timeoutId);
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        document.body.style.overflow = originalBodyOverflow;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const lenis = (window as any).__lenis;
+        if (lenis) {
+          lenis.start();
+        }
+      };
+    } else {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, 0);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const lenis = (window as any).__lenis;
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
+        lenis.start();
+      }
+    }
+  }, [visible]);
+
+  const handleEnter = () => {
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+      lenis.start();
+    }
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    setVisible(false);
+  };
 
   return (
     <AnimatePresence>
@@ -18,6 +81,8 @@ export default function IntroScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reducedMotion ? 0 : 0.65, ease: [0.65, 0, 0.35, 1] }}
+          onWheel={(e) => e.preventDefault()}
+          onTouchMove={(e) => e.preventDefault()}
         >
           {/* Background Desktop (1920x960) — Full Wide */}
           <div className={styles.bgDesktop}>
@@ -70,7 +135,7 @@ export default function IntroScreen() {
             {/* Botão na cor preta com seta para a direita */}
             <motion.button
               className={styles.btn}
-              onClick={() => setVisible(false)}
+              onClick={handleEnter}
               type="button"
               whileHover={{ scale: reducedMotion ? 1 : 1.03 }}
               whileTap={{ scale: reducedMotion ? 1 : 0.97 }}
